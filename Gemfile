@@ -12,6 +12,8 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'sass-rails', '~> 5.0'
 
 group :development, :test do
+	gem 'guard'
+	gem 'guard-livereload', require: false
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
