@@ -13,3 +13,64 @@
  *= require_tree .
  *= require_self
  */
+
+ /*----- Navbar ----------*/
+ .navbar.navbar-default {
+ 	margin: 0;
+ 	border: none;
+ 	border-radius: 0;
+ 	background-color: transparent;
+ }
+
+.navbar-default .navbar-brand {
+	color: black;
+	font-size: 40px;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	transition: all .3s;
+ }
+ 
+.navbar-default .navbar-nav > li > a {
+	color: black;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	transition: all .3s;
+	font-size: 20px;
+ }
+
+.navbar-default .navbar-brand:hover {
+	color: black;
+ 	font-size: 50px;
+ }
+ 
+.navbar-default .navbar-nav > li > a:hover {
+	color: black;
+ 	font-size: 25px;
+ }
+  /* --------------------- */
+
+ /*----- Home View ------ */
+ header {
+ 	text-align: center;
+ 	color: black;
+ 	background-attachment: fixed;
+ 	background-image: url(http://upload.wikimedia.org/wikipedia/commons/1/10/Basketball_through_hoop.jpg);
+ 	background-position: center center;
+ 	background-repeat: none;
+ 	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+ 	background-size: cover;
+ 	-o-background-size: cover;
+ 	height: 100vh;
+ 	width: 100%;
+ }
+
+ #info, #contact {
+ 	height: 50vh;
+ }
+
+ #contact {
+	background-color: #FFEBCD;
+ }
+
+ /* --------------------- */
