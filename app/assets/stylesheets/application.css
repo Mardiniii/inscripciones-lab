@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+ /*----- Home View ------ */
+
+ header {
+ 	text-align: center;
+ 	color: black;
+ 	background-attachment: fixed;
+ 	background-image: url(http://i592.photobucket.com/albums/tt5/Mardini03/FONDO4CHEF.jpg);
+ 	background-position: center center;
+ 	background-repeat: none;
+ 	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+ 	background-size: cover;
+ 	-o-background-size: cover;
+ 	height: 100vh;
+ 	width: 100%;
+ }
+ 
+ /* --------------------- */
