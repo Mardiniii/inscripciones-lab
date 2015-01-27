@@ -23,4 +23,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_one :club
+  after_create :send_email
+
+  def send_email
+  	UserMailer.welcome_email(self).deliver
+  end
 end
