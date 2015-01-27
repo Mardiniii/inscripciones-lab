@@ -13,6 +13,7 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'sass-rails', '~> 5.0'
 gem 'annotate', '~> 2.6.5'
 gem 'hirb'
+gem "paperclip", "~> 4.2"
 
 group :development, :test do
 	gem 'sqlite3'
