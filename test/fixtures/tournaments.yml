@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: tournaments
+#
+#  id           :integer          not null, primary key
+#  categorie_id :integer
+#  start_date   :date
+#  end_date     :date
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  categorie_id: 
+  start_date: 2015-01-26
+  end_date: 2015-01-26
+
+two:
+  categorie_id: 
+  start_date: 2015-01-26
+  end_date: 2015-01-26
