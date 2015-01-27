@@ -1,0 +1,35 @@
+# == Schema Information
+#
+# Table name: presidents
+#
+#  id             :integer          not null, primary key
+#  name           :string
+#  identification :integer
+#  phone          :string
+#  fax            :string
+#  cellphone      :string
+#  email          :string
+#  club_id        :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  identification: 1
+  phone: MyString
+  fax: MyString
+  cellphone: MyString
+  email: MyString
+  club_id: 
+
+two:
+  name: MyString
+  identification: 1
+  phone: MyString
+  fax: MyString
+  cellphone: MyString
+  email: MyString
+  club_id: 
