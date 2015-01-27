@@ -4,9 +4,9 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Bienvenido al sistema de inscripciones de la Liga Antioqueña de Baloncesto</h1>
+    <h1>Señ@r <%= @user.name %> <%= @user.last_name %> Bienvenido al sistema de inscripciones de la Liga Antioqueña de Baloncesto</h1>
     <p>
-      Su registro ha sido completado con exito, para gestionar todas las inscripciones de su Club debe ingresar a la plataforma con los siguientes datos:</br>
+      Su registro ha sido completado con exito, para gestionar el registro de su club y todas las inscripciones de este debe ingresar a la plataforma con los siguientes datos:</br>
       Usuario: <%= @user.email %></br>
       Contraseña:  <%= @user.password %><br>
     </p>
