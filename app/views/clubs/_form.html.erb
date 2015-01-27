@@ -55,7 +55,27 @@
 			</div>
 		<% end %>
 	</div>
-
+	<div class="col-xs-6">
+		<p>Informacion del Manager</p>
+		<%= f.fields_for :manager do |m|%>
+			<div class="field form-group">
+				<%= m.label :nombre_completo %><br />
+				<%= m.text_field :name, :class => "form-control" %>
+			</div>
+			<div class="field form-group">
+				<%= m.label :celular %><br />
+				<%= m.text_field :cellphone, :class => "form-control" %>
+			</div>
+			<div class="field form-group">
+				<%= m.label :telefono %><br />
+				<%= m.text_field :phone, :class => "form-control" %>
+			</div>
+			<div class="field form-group">
+				<%= m.label :correo_electronico %><br />
+				<%= m.text_field :email, :class => "form-control" %>
+			</div>
+		<% end %>
+	</div>
 	<div class="actions form-group text-center">
 	  <%= f.submit "Registrar Club", :class => 'btn btn-lg btn-default' %>
 	</div>

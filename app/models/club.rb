@@ -23,5 +23,7 @@ class Club < ActiveRecord::Base
 
   accepts_nested_attributes_for :president
   validates_associated :president
+  accepts_nested_attributes_for :manager
+  validates_associated :manager
 
 end
