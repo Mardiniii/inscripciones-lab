@@ -25,6 +25,9 @@
 .navbar-default .navbar-brand {
 	color: black;
 	font-size: 40px;
+	height: 80px;
+	width: 50px;
+	padding: 0;
 	-webkit-transition: all .3s;
 	-moz-transition: all .3s;
 	transition: all .3s;
@@ -47,7 +50,13 @@
 	color: black;
  	font-size: 25px;
  }
-  /* --------------------- */
+ 
+ #logo_home {
+ 	height: 70px;
+ 	width: 40px;
+ }
+
+ /* --------------------- */
 
  /*----- Home View ------ */
  header {
@@ -71,6 +80,14 @@
 
  #contact {
 	background-color: #FFEBCD;
+ }
+
+ #initial_login {
+ 	margin-top: 200px;
+ 	background-color: rgba(245,222,179,0.6);
+ 	border-radius: 12px;
+ 	padding: 15px;
+ 	color: black;
  }
 
  /* --------------------- */
