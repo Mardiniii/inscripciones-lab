@@ -3,7 +3,11 @@
 		<div class="row">
 			<div class="col-xs-6">
 				<div class="content" id="initial_login">
-					<%= render "devise/sessions/new" %>
+					<% if user_signed_in? %>
+						<%= link_to "INSCRIPCIONES", root_path %>						
+					<% else %>
+						<%= render "devise/sessions/new" %>
+					<% end %>					
 				</div>	
 			</div>
 		</div>

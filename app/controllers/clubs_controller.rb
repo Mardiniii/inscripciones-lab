@@ -16,6 +16,17 @@ class ClubsController < ApplicationController
 		end
 	end
 
+	def edit
+		@club = Club.find(params[:id])
+	end
+
+	def update
+		@club = Club.find(params[:id])
+		if @club.update(club_params)
+			redirect_to @club			
+		end
+	end
+
 	def show
 		@club = Club.find(params[:id])
 	end

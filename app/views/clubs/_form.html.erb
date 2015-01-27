@@ -1,84 +1,88 @@
 <%= form_for @club do |f| %>
-	<div class="col-xs-6">
-		<p>Informacion del CLUB</p>
-		<div class="field form-group">
-			<%= f.label :nombre %><br />
-			<%= f.text_field :name, :class => "form-control" %>
+	<div class="row">
+		<div class="col-xs-6">
+			<p>Informacion del CLUB</p>
+			<div class="field form-group">
+				<%= f.label :nombre %><br />
+				<%= f.text_field :name, :class => "form-control" %>
+			</div>
+			<div class="field form-group">
+				<%= f.label :dirección %><br />
+				<%= f.text_field :address, :class => "form-control" %>
+			</div>
+			<div class="field form-group">
+				<%= f.label :correo %><br />
+				<%= f.text_field :email, :class => "form-control" %>
+			</div>
+			<div class="field form-group">
+				<%= f.label :municipio %><br />
+				<%= f.text_field :municipality, :class => "form-control" %>
+			</div>
+			<div class="field form-group">
+				<%= f.label :telefono %><br />
+				<%= f.text_field :phone, :class => "form-control" %>
+			</div>
+			<div class="field form-group">
+				<%= f.label :celular %><br />
+				<%= f.text_field :cellphone, :class => "form-control" %>
+			</div>
+			<div class="field form-group">
+			  <%= f.label :imagen %><br>
+			  <%= f.file_field :avatar %>
+			</div>
 		</div>
-		<div class="field form-group">
-			<%= f.label :dirección %><br />
-			<%= f.text_field :address, :class => "form-control" %>
-		</div>
-		<div class="field form-group">
-			<%= f.label :correo %><br />
-			<%= f.text_field :email, :class => "form-control" %>
-		</div>
-		<div class="field form-group">
-			<%= f.label :municipio %><br />
-			<%= f.text_field :municipality, :class => "form-control" %>
-		</div>
-		<div class="field form-group">
-			<%= f.label :telefono %><br />
-			<%= f.text_field :phone, :class => "form-control" %>
-		</div>
-		<div class="field form-group">
-			<%= f.label :celular %><br />
-			<%= f.text_field :cellphone, :class => "form-control" %>
-		</div>
-		<div class="field form-group">
-		  <%= f.label :imagen %><br>
-		  <%= f.file_field :avatar %>
+		<div class="col-xs-6">
+			<p>Informacion del President</p>
+			<%= f.fields_for :president do |p|%>
+				<div class="field form-group">
+					<%= p.label :nombre_completo %><br />
+					<%= p.text_field :name, :class => "form-control" %>
+				</div>
+				<div class="field form-group">
+					<%= p.label :numero_de_identificación %><br />
+					<%= p.text_field :identification, :class => "form-control" %>
+				</div>
+				<div class="field form-group">
+					<%= p.label :telefono %><br />
+					<%= p.text_field :phone, :class => "form-control" %>
+				</div>
+				<div class="field form-group">
+					<%= p.label :fax %><br />
+					<%= p.text_field :fax, :class => "form-control" %>
+				</div>
+				<div class="field form-group">
+					<%= p.label :celular %><br />
+					<%= p.text_field :cellphone, :class => "form-control" %>
+				</div>
+				<div class="field form-group">
+					<%= p.label :correo_electronico %><br />
+					<%= p.text_field :email, :class => "form-control" %>
+				</div>
+			<% end %>
 		</div>
 	</div>
-	<div class="col-xs-6">
-		<p>Informacion del President</p>
-		<%= f.fields_for :president do |p|%>
-			<div class="field form-group">
-				<%= p.label :nombre_completo %><br />
-				<%= p.text_field :name, :class => "form-control" %>
-			</div>
-			<div class="field form-group">
-				<%= p.label :numero_de_identificación %><br />
-				<%= p.text_field :identification, :class => "form-control" %>
-			</div>
-			<div class="field form-group">
-				<%= p.label :telefono %><br />
-				<%= p.text_field :phone, :class => "form-control" %>
-			</div>
-			<div class="field form-group">
-				<%= p.label :fax %><br />
-				<%= p.text_field :fax, :class => "form-control" %>
-			</div>
-			<div class="field form-group">
-				<%= p.label :celular %><br />
-				<%= p.text_field :cellphone, :class => "form-control" %>
-			</div>
-			<div class="field form-group">
-				<%= p.label :correo_electronico %><br />
-				<%= p.text_field :email, :class => "form-control" %>
-			</div>
-		<% end %>
-	</div>
-	<div class="col-xs-6">
-		<p>Informacion del Manager</p>
-		<%= f.fields_for :manager do |m|%>
-			<div class="field form-group">
-				<%= m.label :nombre_completo %><br />
-				<%= m.text_field :name, :class => "form-control" %>
-			</div>
-			<div class="field form-group">
-				<%= m.label :celular %><br />
-				<%= m.text_field :cellphone, :class => "form-control" %>
-			</div>
-			<div class="field form-group">
-				<%= m.label :telefono %><br />
-				<%= m.text_field :phone, :class => "form-control" %>
-			</div>
-			<div class="field form-group">
-				<%= m.label :correo_electronico %><br />
-				<%= m.text_field :email, :class => "form-control" %>
-			</div>
-		<% end %>
+	<div class="row">
+		<div class="col-xs-6">
+			<p>Informacion del Manager</p>
+			<%= f.fields_for :manager do |m|%>
+				<div class="field form-group">
+					<%= m.label :nombre_completo %><br />
+					<%= m.text_field :name, :class => "form-control" %>
+				</div>
+				<div class="field form-group">
+					<%= m.label :celular %><br />
+					<%= m.text_field :cellphone, :class => "form-control" %>
+				</div>
+				<div class="field form-group">
+					<%= m.label :telefono %><br />
+					<%= m.text_field :phone, :class => "form-control" %>
+				</div>
+				<div class="field form-group">
+					<%= m.label :correo_electronico %><br />
+					<%= m.text_field :email, :class => "form-control" %>
+				</div>
+			<% end %>
+		</div>
 	</div>
 	<div class="actions form-group text-center">
 	  <%= f.submit "Registrar Club", :class => 'btn btn-lg btn-default' %>
