@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'sass-rails', '~> 5.0'
 gem 'annotate', '~> 2.6.5'
+gem 'hirb'
 
 group :development, :test do
 	gem 'sqlite3'

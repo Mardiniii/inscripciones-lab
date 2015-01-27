@@ -8,4 +8,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :last_name, :identification_number,:cellphone, :email, :password, :password_confirmation) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :last_name, :identification_number,:cellphone, :email, :password, :password_confirmation) }
   end
+
+  def after_sign_in_path_for(user)
+    if current_user.club
+    	root_path
+    else
+      new_club_path
+    end
+  end
 end

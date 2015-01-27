@@ -13,5 +13,5 @@
 class Field < ActiveRecord::Base
 	enum type: [:Cemento,:Maderame]
   belongs_to :club
-  has_many :field_hours
+  has_many :field_hours, dependent: :destroy
 end
