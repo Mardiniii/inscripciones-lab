@@ -2,16 +2,20 @@
 #
 # Table name: clubs
 #
-#  id           :integer          not null, primary key
-#  user_id      :integer
-#  name         :string
-#  address      :string
-#  email        :string
-#  municipality :string
-#  phone        :string
-#  cellphone    :string
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id                  :integer          not null, primary key
+#  user_id             :integer
+#  name                :string
+#  address             :string
+#  email               :string
+#  municipality        :string
+#  phone               :string
+#  cellphone           :string
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  avatar_file_name    :string
+#  avatar_content_type :string
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
 #
 
 class Club < ActiveRecord::Base
@@ -23,9 +27,8 @@ class Club < ActiveRecord::Base
   has_one :manager, dependent: :destroy
   has_many :registrations
 
-  accepts_nested_attributes_for :president
-  validates_associated :president
-  accepts_nested_attributes_for :manager
-  validates_associated :manager
-
+  accepts_nested_attributes_for :president, :manager
+  accepts_nested_attributes_for :fields, :reject_if => :all_blank, allow_destroy: true
+  validates_associated :president, :manager
+  validates_associated :fields
 end

@@ -4,6 +4,7 @@ class ClubsController < ApplicationController
 		@club = Club.new
 		@club.president = President.new
 		@club.manager = Manager.new
+		@club.fields.build
 	end
 
 	def create
@@ -33,6 +34,6 @@ class ClubsController < ApplicationController
 
 	private
 		def club_params
-  		params.require(:club).permit(:name, :address, :email, :municipality, :phone, :cellphone, :avatar, president_attributes: [:name,:identification,:phone,:fax,:cellphone,:email], manager_attributes: [:name,:phone,:cellphone,:email])
+  		params.require(:club).permit(:name, :address, :email, :municipality, :phone, :cellphone, :avatar, president_attributes: [:name,:identification,:phone,:fax,:cellphone,:email], manager_attributes: [:name,:phone,:cellphone,:email], fields_attributes: [ :field_type, :address, :_destroy ])
 		end
 end

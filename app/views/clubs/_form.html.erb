@@ -27,7 +27,7 @@
 				<%= f.text_field :cellphone, :class => "form-control" %>
 			</div>
 			<div class="field form-group">
-			  <%= f.label :imagen %><br>
+			  <%= f.label :imagen %><br/>
 			  <%= f.file_field :avatar %>
 			</div>
 		</div>
@@ -80,6 +80,23 @@
 				<div class="field form-group">
 					<%= m.label :correo_electronico %><br />
 					<%= m.text_field :email, :class => "form-control" %>
+				</div>
+			<% end %>
+		</div>
+		<div class="col-xs-6">
+			<p>Informacion de las canchas</p>
+			<%= f.fields_for :fields, Field.new do |c| %>
+				<div class="field form-group">
+					<%= c.label :tipo %><br />
+					<%= c.select :field_type, Field.types.keys.to_a, {}, :class => "form-control" %>
+				</div>
+				<div class="field form-group">
+					<%= c.label :dirección %><br />
+					<%= c.text_field :address, :class => "form-control" %>
+				</div>
+				<div class="field form-group">					
+					<%= c.check_box :_destroy %>
+					<%= c.label :_destroy, "Borrar Cancha" %>
 				</div>
 			<% end %>
 		</div>

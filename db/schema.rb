@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127194855) do
+ActiveRecord::Schema.define(version: 20150128041519) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20150127194855) do
   add_index "field_hours", ["field_id"], name: "index_field_hours_on_field_id"
 
   create_table "fields", force: :cascade do |t|
-    t.integer  "type"
+    t.integer  "field_type"
     t.string   "address"
     t.integer  "club_id"
     t.datetime "created_at", null: false
