@@ -9,7 +9,7 @@
 #  updated_at    :datetime         not null
 #
 
-class Registration < ActiveRecord::Base
+class Inscription < ActiveRecord::Base
   belongs_to :tournament
   belongs_to :club
   has_many :registers, dependent: :destroy

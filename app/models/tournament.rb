@@ -14,5 +14,5 @@
 
 class Tournament < ActiveRecord::Base
   belongs_to :categorie
-  has_many :registrations, dependent: :destroy
+  has_many :inscriptions, dependent: :destroy
 end

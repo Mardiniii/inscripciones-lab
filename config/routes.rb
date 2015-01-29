@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :clubs
   resources :fields
-  # resources :registrations
+  resources :inscriptions
   devise_for :users
   get 'registration_welcome' => 'registrations#welcome_registration'
   root 'welcome#home'

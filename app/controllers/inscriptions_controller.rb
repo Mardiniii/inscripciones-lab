@@ -1,4 +1,4 @@
-class RegistrationsController < ApplicationController
+class InscriptionsController < ApplicationController
 	def welcome_registration
 		club_id = params[:club_id]
 		tournament_id = params[:tournament_id]

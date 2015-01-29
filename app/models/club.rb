@@ -25,7 +25,7 @@ class Club < ActiveRecord::Base
   has_one :president, dependent: :destroy
   has_many :fields, dependent: :destroy
   has_one :manager, dependent: :destroy
-  has_many :registrations
+  has_many :inscriptions
 
   accepts_nested_attributes_for :president, :manager
   validates_associated :president, :manager

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150129184105) do
+ActiveRecord::Schema.define(version: 20150129233115) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -57,6 +57,16 @@ ActiveRecord::Schema.define(version: 20150129184105) do
   end
 
   add_index "fields", ["club_id"], name: "index_fields_on_club_id"
+
+  create_table "inscriptions", force: :cascade do |t|
+    t.integer  "tournament_id"
+    t.integer  "club_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "inscriptions", ["club_id"], name: "index_inscriptions_on_club_id"
+  add_index "inscriptions", ["tournament_id"], name: "index_inscriptions_on_tournament_id"
 
   create_table "managers", force: :cascade do |t|
     t.string   "name"
@@ -106,16 +116,6 @@ ActiveRecord::Schema.define(version: 20150129184105) do
 
   add_index "registers", ["register_type_id"], name: "index_registers_on_register_type_id"
   add_index "registers", ["registration_id"], name: "index_registers_on_registration_id"
-
-  create_table "registrations", force: :cascade do |t|
-    t.integer  "tournament_id"
-    t.integer  "club_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "registrations", ["club_id"], name: "index_registrations_on_club_id"
-  add_index "registrations", ["tournament_id"], name: "index_registrations_on_tournament_id"
 
   create_table "tournaments", force: :cascade do |t|
     t.integer  "categorie_id"

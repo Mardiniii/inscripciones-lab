@@ -18,5 +18,5 @@
 
 class Register < ActiveRecord::Base
   belongs_to :register_type
-  belongs_to :registration
+  belongs_to :inscription
 end
