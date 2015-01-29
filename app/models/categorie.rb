@@ -10,5 +10,4 @@
 
 class Categorie < ActiveRecord::Base
 	has_many :tournaments
-	has_many :registrations
 end

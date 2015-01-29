@@ -10,7 +10,6 @@
 #
 
 class Registration < ActiveRecord::Base
-  belongs_to :categorie
   belongs_to :tournament
   belongs_to :club
   has_many :registers, dependent: :destroy
