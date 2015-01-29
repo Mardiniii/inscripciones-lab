@@ -3,7 +3,6 @@
 # Table name: registrations
 #
 #  id            :integer          not null, primary key
-#  categorie_id  :integer
 #  tournament_id :integer
 #  club_id       :integer
 #  created_at    :datetime         not null

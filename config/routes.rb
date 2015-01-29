@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :clubs
+  resources :fields
   devise_for :users
   root 'welcome#home'
   # The priority is based upon order of creation: first created -> highest priority.

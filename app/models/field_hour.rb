@@ -8,8 +8,10 @@
 #  field_id     :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  day          :integer
 #
 
 class FieldHour < ActiveRecord::Base
+  enum day: [:Lunes,:Martes,:Miercoles,:Jueves,:Viernes,:Sabado,:Domingo]
   belongs_to :field
 end

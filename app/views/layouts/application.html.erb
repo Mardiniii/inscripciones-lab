@@ -22,14 +22,19 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
-	        <li><%= link_to 'HOME', root_path %></li>	      
+	        <li><%= link_to 'INSCRIPCIONES', root_path if user_signed_in? && current_user.club %></li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">	  
 	        <% if user_signed_in? %>
-				<li><%= link_to 'IR A TU CLUB', current_user.club %></li>
+				<% if current_user.club %>
+					<li><%= link_to 'IR A TU CLUB', current_user.club if !current_page?(current_user.club) %></li>
+					<li><%= link_to 'AGREGAR CANCHA', new_field_path %></li>
+				<% else %>
+					<li><%= link_to 'CREA TU CLUB', new_club_path %></li>
+				<% end %>
 	        	<li><%= link_to 'LOG OUT', destroy_user_session_path, method: :delete %></li>
 	        <% else %>
-				<li><%= link_to 'Registra tu club', new_user_registration_path %></li>
+				<li><%= link_to 'CREA UNA CUENTA', new_user_registration_path %></li>
 	        <% end %>	
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
@@ -40,6 +45,7 @@
 	<p class="alert"><%= alert %></p> -->
 
 	<%= yield %>
+
 	<% if current_page?(root_path) %>
 		<footer>
 			<div class="container-fluid">

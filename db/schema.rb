@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150128041519) do
+ActiveRecord::Schema.define(version: 20150128204724) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20150128041519) do
     t.integer  "field_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "day"
   end
 
   add_index "field_hours", ["field_id"], name: "index_field_hours_on_field_id"
@@ -107,14 +108,12 @@ ActiveRecord::Schema.define(version: 20150128041519) do
   add_index "registers", ["registration_id"], name: "index_registers_on_registration_id"
 
   create_table "registrations", force: :cascade do |t|
-    t.integer  "categorie_id"
     t.integer  "tournament_id"
     t.integer  "club_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
-  add_index "registrations", ["categorie_id"], name: "index_registrations_on_categorie_id"
   add_index "registrations", ["club_id"], name: "index_registrations_on_club_id"
   add_index "registrations", ["tournament_id"], name: "index_registrations_on_tournament_id"
 

@@ -1,0 +1,25 @@
+<%= form_for(@field) do |cancha| %>
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-2">
+			<div class="field form-group">
+				<%= cancha.label :tipo %><br />
+				<%= cancha.select :field_type, options_for_select(Field.field_types.keys), {}, { :class => "form-control" } %>
+			</div>
+			<div class="field form-group">
+				<%= cancha.label :dirección %><br />
+				<%= cancha.text_field :address, :class => "form-control" %>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<%= cancha.fields_for :field_hours do |h| %>
+			<%= render 'field_hour_form', :hour => h %>
+		<% end %>
+		<%= link_to_add_fields "Agregar Horario", cancha, :field_hours %>
+	</div>
+	<div class="actions form-group text-center">
+	  <%= cancha.submit "Guardar Informacion de la cancha", :class => 'btn btn-lg btn-default' %>
+	</div>
+<% end %>
+	
+</div>
