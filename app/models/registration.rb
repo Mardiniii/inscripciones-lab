@@ -13,4 +13,6 @@ class Registration < ActiveRecord::Base
   belongs_to :tournament
   belongs_to :club
   has_many :registers, dependent: :destroy
+  accepts_nested_attributes_for :registers, :reject_if => :all_blank, allow_destroy: true
+  validates_associated :registers
 end
