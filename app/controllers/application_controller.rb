@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
       new_club_path
     end
   end
+
+  def after_sign_up_path_for(user)
+    root_path
+  end
 end
