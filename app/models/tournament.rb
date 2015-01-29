@@ -8,6 +8,8 @@
 #  end_date     :date
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  name         :string
+#  description  :text
 #
 
 class Tournament < ActiveRecord::Base
