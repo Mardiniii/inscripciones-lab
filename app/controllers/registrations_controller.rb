@@ -5,4 +5,11 @@ class RegistrationsController < ApplicationController
 		@club = Club.find(club_id)
 		@tournament = Tournament.find(tournament_id)
 	end
+
+	def new
+		@registration = Registration.new
+	end
+
+	def create
+	end
 end
