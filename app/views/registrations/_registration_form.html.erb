@@ -1,0 +1,13 @@
+<%= form_for(@registration) do |registration| %>
+	<div class="row">
+		<div class="row">
+			<%= registration.fields_for :field_hours do |r| %>
+				<%= render 'register_form', :register => r %>
+			<% end %>
+			<%= link_to_add_registers "Agregar Horario", registration, :registers %>
+		</div>			
+	</div>
+	<div class="actions form-group text-center">
+	  <%= registration.submit "Realizar", :class => 'btn btn-lg btn-default' %>
+	</div>
+<% end %>
