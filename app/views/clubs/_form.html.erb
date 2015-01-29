@@ -1,0 +1,58 @@
+<%= form_for @club do |f| %>
+	<div class="row">
+		<div class="col-xs-6">
+			<h2 class="text-center">Informacion del CLUB</h2>
+			<p class="text-justify">Complete en esta sección el formulario con los campos del club</p>
+			<div class="field form-group">
+				<%= f.label :nombre %><br />
+				<%= f.text_field :name, :class => "form-control" %>
+			</div>
+			<div class="field form-group">
+				<%= f.label :dirección %><br />
+				<%= f.text_field :address, :class => "form-control" %>
+			</div>
+			<div class="field form-group">
+				<%= f.label :correo %><br />
+				<%= f.text_field :email, :class => "form-control" %>
+			</div>
+			<div class="field form-group">
+				<%= f.label :municipio %><br />
+				<%= f.text_field :municipality, :class => "form-control" %>
+			</div>
+			<div class="field form-group">
+				<%= f.label :telefono %><br />
+				<%= f.text_field :phone, :class => "form-control" %>
+			</div>
+			<div class="field form-group">
+				<%= f.label :celular %><br />
+				<%= f.text_field :cellphone, :class => "form-control" %>
+			</div>
+			<div class="field form-group">
+			  <%= f.label :imagen %><br/>
+			  <%= f.file_field :avatar %>
+			</div>
+		</div>
+		<div class="col-xs-6">
+			<h2 class="text-center">Informacion del Presidente</h2>
+			<p class="text-justify">Complete en esta sección el formulario con los campos del presidente del club</p>
+			<%= f.fields_for :president do |p|%>
+				<%= render 'president_form', :president => p %>
+			<% end %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6">
+			<h2 class="text-center">Informacion del Manager</h2>
+			<p class="text-justify">Complete en esta sección el formulario con los campos del representante encargado del club</p>
+			<%= f.fields_for :manager do |m|%>
+				<%= render 'manager_form', :manager => m %>
+			<% end %>
+		</div>
+		<div class="col-xs-6">
+			<div class="actions form-group text-center">
+				<p class="text-justify">Una vez termine de llenar todos los campos de este formulario recibira un correo electronico con la información de su Club, esta podra ser editada en cualquier momento a travez del link ir a tu club en la parte superior derecha de la pantalla.</p>
+				<%= f.submit "Guardar Informacion del Club", :class => 'btn btn-lg btn-default' %>
+			</div>
+		</div>
+	</div>
+<% end %>

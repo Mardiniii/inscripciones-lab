@@ -15,6 +15,10 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime
 #  updated_at             :datetime
+#  name                   :string
+#  identification_number  :string
+#  last_name              :string
+#  cellphone              :string
 #
 
 class User < ActiveRecord::Base
@@ -22,5 +26,10 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_one :club
+  has_one :club, dependent: :destroy
+  after_create :send_email
+
+  def send_email
+  	UserMailer.welcome_email(self).deliver
+  end
 end

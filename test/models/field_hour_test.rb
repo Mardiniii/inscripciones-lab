@@ -8,6 +8,7 @@
 #  field_id     :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  day          :integer
 #
 
 require 'test_helper'

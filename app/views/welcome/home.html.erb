@@ -1,10 +1,21 @@
 <header>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-6">
-				<div class="content" id="initial_login">
-					<%= render "devise/sessions/new" %>
-				</div>	
+			<div class="col-xs-6">				
+		        <% if user_signed_in? && current_user.club %>
+		        	<div class="content" id="initial_login">		        	
+			        	<table class="table table-condensed">
+			        		<tr><th class="text-center">Seleccion un torneo para realizar la inscripción</th></tr>
+							<% Tournament.all.each do |tournament| %>
+								<tr><td><%= link_to "#{tournament.name}", registration_welcome_path(:tournament_id => "#{tournament.id}", :club_id=> "#{current_user.club.id}" ) %></td></tr>
+							<% end %>
+			        	</table>
+			        </div>	
+		        <% else %>
+		        	<div class="content" id="initial_login">
+		        		<%= render "devise/sessions/new" %>
+		        	</div>
+		        <% end %>					
 			</div>
 		</div>
 	</div>	

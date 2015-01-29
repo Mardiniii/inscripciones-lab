@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127034335) do
+ActiveRecord::Schema.define(version: 20150129184105) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -27,8 +27,12 @@ ActiveRecord::Schema.define(version: 20150127034335) do
     t.string   "municipality"
     t.string   "phone"
     t.string   "cellphone"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "clubs", ["user_id"], name: "index_clubs_on_user_id"
@@ -39,12 +43,13 @@ ActiveRecord::Schema.define(version: 20150127034335) do
     t.integer  "field_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "day"
   end
 
   add_index "field_hours", ["field_id"], name: "index_field_hours_on_field_id"
 
   create_table "fields", force: :cascade do |t|
-    t.integer  "type"
+    t.integer  "field_type"
     t.string   "address"
     t.integer  "club_id"
     t.datetime "created_at", null: false
@@ -103,14 +108,12 @@ ActiveRecord::Schema.define(version: 20150127034335) do
   add_index "registers", ["registration_id"], name: "index_registers_on_registration_id"
 
   create_table "registrations", force: :cascade do |t|
-    t.integer  "categorie_id"
     t.integer  "tournament_id"
     t.integer  "club_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
-  add_index "registrations", ["categorie_id"], name: "index_registrations_on_categorie_id"
   add_index "registrations", ["club_id"], name: "index_registrations_on_club_id"
   add_index "registrations", ["tournament_id"], name: "index_registrations_on_tournament_id"
 
@@ -120,6 +123,8 @@ ActiveRecord::Schema.define(version: 20150127034335) do
     t.date     "end_date"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "name"
+    t.text     "description"
   end
 
   add_index "tournaments", ["categorie_id"], name: "index_tournaments_on_categorie_id"
@@ -137,6 +142,10 @@ ActiveRecord::Schema.define(version: 20150127034335) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.string   "identification_number"
+    t.string   "last_name"
+    t.string   "cellphone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

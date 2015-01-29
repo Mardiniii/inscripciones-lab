@@ -1,0 +1,55 @@
+<div class="container-fluid new_register">
+	<div class="row">
+		<div class="col-xs-4 text-center">
+			<%= image_tag @club.avatar.url(:medium) %>
+		</div>
+		<div class="col-xs-4 text-left">
+			<h2 class="text-center">CLUB</h2>
+			<h4>Nombre: <%= @club.name %></h4>
+			<h4>Dirección: <%= @club.address %></h4>
+			<h4>Correo del Club: <%= @club.email %></h4>
+			<h4>Municipio: <%= @club.municipality %></h4>
+			<h4>Telefono: <%= @club.phone %></h4>
+			<h4>Celular: <%= @club.cellphone %></h4>
+		</div>
+		<div class="col-xs-4 text-left">
+			<h2 class="text-center">PRESIDENTE</h2>
+			<h4>Nombre: <%= @club.president.name %></h4>
+			<h4>Cédula: <%= @club.president.identification %></h4>
+			<h4>Correo del Presidente: <%= @club.president.email %></h4>
+			<h4>Telefono: <%= @club.president.phone %></h4>
+			<h4>Fax: <%= @club.president.fax %></h4>
+			<h4>Celular: <%= @club.president.cellphone %></h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-4 text-left">
+			<h2 class="text-center">MANAGER</h2>
+			<h4>Nombre: <%= @club.manager.name %></h4>
+			<h4>Correo del Manager: <%= @club.manager.email %></h4>
+			<h4>Telefono: <%= @club.manager.phone %></h4>
+			<h4>Celular: <%= @club.manager.cellphone %></h4>
+		</div>
+		<div class="col-xs-4">
+			<% if current_user.club.fields.any? %>
+				<% @fields.each do |field| %>
+				<h2 class="text-center">Informacion de  Cancha disponible</h2>
+				<h4>Dirección: <%= field.address %></h4>
+				<h4>Tipo: <%= field.field_type %></h4>
+				<h2>Horarios<h2>
+				<% field.field_hours.each do |field_hour| %>
+				<h4>Dia: <%= field_hour.day %></h4>
+				<h4>Hora Apertura: <%= field_hour.open_hour %></h4>
+				<h4>Hora Cierre: <%= field_hour.closing_time %></h4>
+				<% end %>
+				<% end %>				
+			<% else %>
+				<h4>No posee canchas asociadas a este Club</h4>
+			<% end %>
+		</div>
+	</div>
+	<div class="row text-center">
+		<%= link_to 'Editar Club', edit_club_path(@club), :class => "btn btn-default"%>
+		<%= link_to 'Ir a inscripciones', root_path, :class => "btn btn-default"%>
+	</div>
+</div>

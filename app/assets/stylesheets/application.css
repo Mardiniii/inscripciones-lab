@@ -90,4 +90,16 @@
  	color: black;
  }
 
- /* --------------------- */
+/* --------------------- */
+/*----- New Registration View ------ */
+
+.new_register	 {
+	background-color: rgba(245,222,179,0.6);
+	border-radius: 12px;
+	padding: 15px;
+	color: black;
+}
+
+/* --------------------- */
+
+

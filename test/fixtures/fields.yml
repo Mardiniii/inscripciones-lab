@@ -3,7 +3,7 @@
 # Table name: fields
 #
 #  id         :integer          not null, primary key
-#  type       :integer
+#  field_type :integer
 #  address    :string
 #  club_id    :integer
 #  created_at :datetime         not null

@@ -8,7 +8,6 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
@@ -38,4 +37,14 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+      config.action_mailer.smtp_settings = {
+        :authentication => :plain,
+        :address => 'smtp.mailgun.org',
+        :port => 587,
+        :domain =>'sandbox0b69790abb7f460db1096b19276f36da.mailgun.org',
+        :user_name => 'postmaster@sandbox0b69790abb7f460db1096b19276f36da.mailgun.org',
+        :password => '890803mzes-89'
+      }
 end
