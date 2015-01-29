@@ -1,0 +1,36 @@
+<div class="col-xs-10 col-xs-offset-1">
+	<fieldset class="form-group">
+		<div class="form-group">
+			<%= register.label :tipo_de_inscripción %><br />
+			<%= register.collection_select :register_type_id, RegisterType.all, :id, :name, {prompt: 'Seleccione un tipo'}, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= register.label :primer_nombre %>
+			<%= register.text_field :first_name %>
+			<%= register.label :segundo_nombre %>
+			<%= register.text_field :second_name %>
+		</div>
+		<div class="form-group">
+			<%= register.label :primer_apellido %>
+			<%= register.text_field :first_last_name %>
+			<%= register.label :segundo_apellido %>
+			<%= register.text_field :second_last_name %>
+		</div>
+		<div class="form-group">
+			<%= register.label :fecha_de_nacimiento %>
+			<%= register.date_select :date_of_birth, { order: [:day, :month, :year], start_year: 1940, include_blank: true } %>
+		</div>
+
+		
+
+	</fieldset>
+</div>
+
+
+
+#  date_of_birth    :date
+#  eps              :string
+#  email            :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#

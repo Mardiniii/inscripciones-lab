@@ -7,7 +7,6 @@ class CreateRegistrations < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :registrations, :categories
     add_foreign_key :registrations, :tournaments
     add_foreign_key :registrations, :clubs
   end
