@@ -12,7 +12,7 @@
 						<td class="text-center vert-align"><%= tournament.name %></td>
 						<td class="text-center vert-align"><strong>INSCRITO</strong></td>
 						<td class="text-center vert-align">
-							<%= link_to "Ver", Inscription.find(5) , class: "btn btn-primary" %> <%= link_to "Editar", "#{}", class: "btn btn-warning" %>
+							<%= link_to "Ver", @inscriptions.find_by_tournament_id(tournament.id) , class: "btn btn-primary" %> <%= link_to "Editar", edit_inscription_path(@inscriptions.find_by_tournament_id(tournament.id), :tournament_id => "#{tournament.id}", :club_id=> "#{current_user.club.id}"), class: "btn btn-warning" %>
 						</td>
 					</tr>
 				<% else %>

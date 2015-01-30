@@ -1,5 +1,8 @@
 <div class="container-fluid">
 	<div class="row">
+		<h2>Inscripción del club <%= @club.name %> a <%= @tournament.name %> </h2>
+	</div>
+	<div class="row">
 		<table class="table table-hover">
 			<tr class="info">
 				<th class="text-center">Participante</th>
@@ -10,7 +13,7 @@
 			</tr>
 			<% @inscription.registers.each do |register| %>
 				<tr class="text-center">
-					<td><%= register.first_name %> <%= register.second_name %> <%= register.first_last_name %> <%= register.first_last_name %></td>
+					<td class="text-left"><%= register.first_name %> <%= register.second_name %> <%= register.first_last_name %> <%= register.first_last_name %></td>
 					<td><%= register.register_type.name %></td>
 					<td><%= register.date_of_birth %></td>
 					<td><%= register.eps %></td>
@@ -21,7 +24,7 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12 text-center">
-			<%= link_to 'Editar Inscripción', inscription_index_path, class: "btn btn-warning" %>
+			<%= link_to 'Editar Inscripción', edit_inscription_path(@inscription, :tournament_id => "#{@inscription.tournament_id}", :club_id=> "#{current_user.club.id}"), class: "btn btn-warning" %>
 			<%= link_to 'Ir a inscripciones', inscription_index_path, class: "btn btn-success" %>
 		</div>
 	</div>

@@ -1,5 +1,5 @@
 <%= form_for(@inscription) do |inscription| %>
-	Club: <%= Club.find(params[:club_id]).name %><br/>
+	Club: <%= @club.name %><br/>
 	Torneo: <%= Tournament.find(@tournament_id).name %>
 	<%= inscription.hidden_field :club_id, value: params[:club_id] %>
 	<%= inscription.hidden_field :tournament_id, value: params[:tournament_id] %>

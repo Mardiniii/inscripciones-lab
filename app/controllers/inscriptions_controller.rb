@@ -18,9 +18,24 @@ class InscriptionsController < ApplicationController
 	def create
 		@inscription = Inscription.new(inscription_params)
 		if @inscription.save
-		  redirect_to current_user.club
+		  redirect_to @inscription
 		else
 		  render action: :new
+		end
+	end
+
+	def edit
+		@inscription = Inscription.find(params[:id])
+		@club_id = params[:club_id]
+		@tournament_id = params[:tournament_id]
+		@club = Club.find(@club_id)
+		@tournament = Tournament.find(@tournament_id)
+	end
+
+	def update
+		@inscription = Inscription.find(params[:id])
+		if @inscription.update(inscription_params)
+			redirect_to @inscription			
 		end
 	end
 
@@ -31,6 +46,8 @@ class InscriptionsController < ApplicationController
 	def show
 		@inscription = Inscription.find(params[:id])
 		@registers = @inscription.registers
+		@club = current_user.club
+		@tournament = Tournament.find(@inscription.tournament_id)
 	end
 
 	private
