@@ -15,7 +15,7 @@ class FieldsController < ApplicationController
 		@field = Field.new(field_params)
 		@field.club_id = current_user.club.id
 		if @field.save
-		  redirect_to @club
+		  redirect_to fields_path
 		else
 		  render action: :new
 		end
@@ -34,6 +34,12 @@ class FieldsController < ApplicationController
 
 	def show
 		@field = Field.find(params[:id])
+	end
+
+	def destroy
+		@field = Field.find(params[:id])
+		@field.destroy
+		redirect_to fields_path
 	end
 
 	private

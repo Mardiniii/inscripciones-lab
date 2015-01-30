@@ -23,35 +23,20 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-4 text-left">
-			<h2 class="text-center">MANAGER</h2>
-			<h4>Nombre: <%= @club.manager.name %></h4>
-			<h4>Correo del Manager: <%= @club.manager.email %></h4>
-			<h4>Telefono: <%= @club.manager.phone %></h4>
-			<h4>Celular: <%= @club.manager.cellphone %></h4>
-		</div>
-		<div class="col-xs-4">
-			<% if current_user.club.fields.any? %>
-				<% @fields.each do |field| %>
-				<h2 class="text-center">Informacion de  Cancha disponible</h2>
-				<h4>Dirección: <%= field.address %></h4>
-				<h4>Tipo: <%= field.field_type %></h4>
-				<h2>Horarios<h2>
-				<% field.field_hours.each do |field_hour| %>
-				<h4>Dia: <%= field_hour.day %></h4>
-				<h4>Hora Apertura: <%= field_hour.open_hour %></h4>
-				<h4>Hora Cierre: <%= field_hour.closing_time %></h4>
-				<% end %>
-				<% end %>				
-			<% else %>
-				<h4>No posee canchas asociadas a este Club</h4>
-			<% end %>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-12 text-center">
+		<div class="col-xs-4 text-center" id="club_buttons">
 			<%= link_to 'Editar Información del Club', edit_club_path(@club), class: "btn btn-warning" %>
 			<%= link_to 'Ir a inscripciones', inscription_index_path, class: "btn btn-success" %>
+		</div>
+		<div class="col-xs-8 text-left">
+			<h2 class="text-center">MANAGER</h2>
+			<div class="col-xs-6">
+				<h4>Nombre: <%= @club.manager.name %></h4>
+				<h4>Correo del Manager: <%= @club.manager.email %></h4>
+			</div>
+			<div class="col-xs-6">
+				<h4>Telefono: <%= @club.manager.phone %></h4>
+				<h4>Celular: <%= @club.manager.cellphone %></h4>
+			</div>
 		</div>
 	</div>
 

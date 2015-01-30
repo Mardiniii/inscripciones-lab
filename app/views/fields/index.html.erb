@@ -10,7 +10,7 @@
 				<tr class="text-center">
 					<td><%= field.field_type %></td>
 					<td><%= field.address %></td>
-					<td><%= link_to "Editar Cancha", edit_field_path(field), class: "btn btn-xs btn-warning" %></td>
+					<td><%= link_to "Ver", field, class: "btn btn-xs btn-info" %> <%= link_to "Editar", edit_field_path(field), class: "btn btn-xs btn-warning" %> <%= link_to field_path(field), method: :delete, data: { confirm: '¿Esta seguro que desea elminar esta cancha?' }, class: "btn btn-xs btn-danger" do %><span>Eliminar</span><% end %></td>
 				</tr>
 			<% end%>
 		</table>

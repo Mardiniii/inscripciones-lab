@@ -1,1 +1,18 @@
-Mostrar las canchas de este club
+<div class="container new_register">
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1 text-center">
+			<div class="col-xs-12">
+				<h1>Dirección: <%= @field.address %></h1>
+				<h2>Tipo: <%= @field.field_type %></h2>
+			</div>
+			<% @field.field_hours.each_with_index do |field_hour, index| %>
+				<div class="col-xs-3">
+				<h3>Horario #<%= index %> </h3>
+				<p><%= field_hour.day %></p>
+				<p>Desde: <%= field_hour.open_hour.hour %></p>
+				<p>Hasta: <%= field_hour.closing_time.hour %></p>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

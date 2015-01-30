@@ -91,6 +91,11 @@
  }
 
 /* --------------------- */
+/*----- Club View ------ */
+#club_buttons {
+	padding-top: 60px;
+}
+/* --------------------- */
 /*----- New Registration View ------ */
 
 .new_register	 {
