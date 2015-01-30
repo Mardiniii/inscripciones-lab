@@ -13,7 +13,7 @@
 			</tr>
 			<% @inscription.registers.each do |register| %>
 				<tr class="text-center">
-					<td class="text-left"><%= register.first_name %> <%= register.second_name %> <%= register.first_last_name %> <%= register.first_last_name %></td>
+					<td class="text-left"><%= register.first_name %> <%= register.second_name %> <%= register.first_last_name %> <%= register.second_last_name %></td>
 					<td><%= register.register_type.name %></td>
 					<td><%= register.date_of_birth %></td>
 					<td><%= register.eps %></td>

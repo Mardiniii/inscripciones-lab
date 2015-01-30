@@ -50,6 +50,12 @@ class InscriptionsController < ApplicationController
 		@tournament = Tournament.find(@inscription.tournament_id)
 	end
 
+	def destroy
+		@inscription = Inscription.find(params[:id])
+		@inscription.destroy
+		redirect_to inscription_index_path
+	end
+
 	private
 		def inscription_params
   		params.require(:inscription).permit(:club_id, :tournament_id, registers_attributes: [ :id, :register_type_id, :first_name, :second_name, :first_last_name , :second_last_name , :date_of_birth, :eps, :email , :_destroy ])
