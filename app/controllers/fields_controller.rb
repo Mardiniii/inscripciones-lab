@@ -1,5 +1,10 @@
 class FieldsController < ApplicationController
 	before_action :authenticate_user!
+	
+	def index
+		@fields = current_user.club.fields
+	end
+
 	def new
 		@field = Field.new
 		@field.field_hours.build
@@ -16,16 +21,16 @@ class FieldsController < ApplicationController
 		end
 	end
 
-	# def edit
-	# 	@field = Field.find(params[:id])
-	# end
+	def edit
+		@field = Field.find(params[:id])
+	end
 
-	# def update
-	# 	@field = Field.find(params[:id])
-	# 	if @field.update(field_params)
-	# 		redirect_to @field			
-	# 	end
-	# end
+	def update
+		@field = Field.find(params[:id])
+		if @field.update(field_params)
+			redirect_to @field			
+		end
+	end
 
 	def show
 		@field = Field.find(params[:id])

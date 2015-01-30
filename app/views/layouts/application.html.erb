@@ -29,6 +29,7 @@
 				<% if current_user.club %>
 					<li><%= link_to 'IR A TU CLUB', current_user.club if !current_page?(current_user.club) %></li>
 					<li><%= link_to 'AGREGAR CANCHA', new_field_path %></li>
+					<li><%= link_to 'EDITAR CANCHAS', fields_path if current_user.club.fields.any? %></li>
 				<% else %>
 					<li><%= link_to 'CREA TU CLUB', new_club_path %></li>
 				<% end %>

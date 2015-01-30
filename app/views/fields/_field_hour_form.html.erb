@@ -2,7 +2,7 @@
 <fieldset class="form-group">
 	<div class="form-group">
 		<%= hour.label :dia %><br />
-		<%= hour.select :day, options_for_select(FieldHour.days.keys), { :include_blank => true }, { :class => "form-control" } %>
+		<%= hour.select :day, options_for_select(FieldHour.days.keys), { }, { :class => "form-control" } %>
 	</div>
 	<div class="form-group">
 		<%= hour.label :hora_apertura %>

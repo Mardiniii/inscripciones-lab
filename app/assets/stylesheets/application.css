@@ -38,7 +38,7 @@
 	-webkit-transition: all .3s;
 	-moz-transition: all .3s;
 	transition: all .3s;
-	font-size: 20px;
+	font-size: 15px;
  }
 
 .navbar-default .navbar-brand:hover {
@@ -48,7 +48,7 @@
  
 .navbar-default .navbar-nav > li > a:hover {
 	color: black;
- 	font-size: 25px;
+ 	font-size: 20px;
  }
  
  #logo_home {
