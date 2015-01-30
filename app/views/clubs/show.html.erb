@@ -48,8 +48,11 @@
 			<% end %>
 		</div>
 	</div>
-	<div class="row text-center">
-		<%= link_to 'Editar Club', edit_club_path(@club), :class => "btn btn-default"%>
-		<%= link_to 'Ir a inscripciones', root_path, :class => "btn btn-default"%>
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			<%= link_to 'Editar Información del Club', edit_club_path(@club), class: "btn btn-warning" %>
+			<%= link_to 'Ir a inscripciones', inscription_index_path, class: "btn btn-success" %>
+		</div>
 	</div>
+
 </div>

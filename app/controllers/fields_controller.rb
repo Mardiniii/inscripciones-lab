@@ -28,7 +28,7 @@ class FieldsController < ApplicationController
 	def update
 		@field = Field.find(params[:id])
 		if @field.update(field_params)
-			redirect_to @field			
+			redirect_to fields_path
 		end
 	end
 

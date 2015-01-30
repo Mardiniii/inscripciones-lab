@@ -1,16 +1,16 @@
 <div class="container">
 	<div class="row">
-		<table class="table">
-			<tr>
-				<th>Tipo</th>
-				<th>Direccion</th>
-				<th>Editar</th>			
+		<table class="table table-hover">
+			<tr class="info">
+				<th class="text-center">Tipo</th>
+				<th class="text-center">Direccion</th>
+				<th class="text-center">Editar</th>			
 			</tr>
 			<% @fields.each do |field| %>
-				<tr>
+				<tr class="text-center">
 					<td><%= field.field_type %></td>
 					<td><%= field.address %></td>
-					<td><%= link_to "Editar Cancha", edit_field_path(field), class: "btn btn-warning" %></td>
+					<td><%= link_to "Editar Cancha", edit_field_path(field), class: "btn btn-xs btn-warning" %></td>
 				</tr>
 			<% end%>
 		</table>

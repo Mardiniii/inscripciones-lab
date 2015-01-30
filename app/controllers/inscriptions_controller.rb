@@ -28,6 +28,11 @@ class InscriptionsController < ApplicationController
 		@inscriptions = current_user.club.inscriptions
 	end
 
+	def show
+		@inscription = Inscription.find(params[:id])
+		@registers = @inscription.registers
+	end
+
 	private
 		def inscription_params
   		params.require(:inscription).permit(:club_id, :tournament_id, registers_attributes: [ :id, :register_type_id, :first_name, :second_name, :first_last_name , :second_last_name , :date_of_birth, :eps, :email , :_destroy ])
