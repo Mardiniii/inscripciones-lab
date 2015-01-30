@@ -11,11 +11,13 @@
 			</div>
 		</div>
 	</div>
-	<%= cancha.fields_for :field_hours do |h| %>
-		<%= render 'field_hour_form', :hour => h %>
-	<% end %>
-	<%= link_to_add_fields "Agregar Horario", cancha, :field_hours %>
+	<div class="row text-center">
+		<%= cancha.fields_for :field_hours do |h| %>
+			<%= render 'field_hour_form', :hour => h %>
+		<% end %>
+	</div>
 	<div class="actions form-group text-center">
+		<%= link_to_add_fields "Agregar Horario", cancha, :field_hours %>
 	  <%= cancha.submit "Guardar Informacion de la cancha", :class => 'btn btn-lg btn-default' %>
 	</div>
 <% end %>

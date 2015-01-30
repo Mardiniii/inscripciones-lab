@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :inscriptions
   devise_for :users
   get 'inscription_welcome' => 'inscriptions#welcome_inscription'
+  get 'inscription_index' => 'inscriptions#select_inscription'
   root 'welcome#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
