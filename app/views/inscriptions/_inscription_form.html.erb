@@ -1,0 +1,13 @@
+<%= form_for(@inscription) do |inscription| %>
+	<div class="row">
+		<div class="row">
+			<%= inscription.fields_for :field_hours do |r| %>
+				<%= render 'register_form', :register => r %>
+			<% end %>
+			<%= link_to_add_registers "Agregar participante", inscription, :registers %>
+		</div>			
+	</div>
+	<div class="actions form-group text-center">
+	  <%= inscription.submit "Realizar", :class => 'btn btn-lg btn-default' %>
+	</div>
+<% end %>
