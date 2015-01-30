@@ -1,0 +1,30 @@
+<div class="container-fluid">
+	<div class="row">
+		<table class="table">
+			<tr>
+				<th class="text-center">TORNEO</th>
+				<th class="text-center">ESTADO</th>
+				<th class="text-center">OPCIONES</th>
+			</tr>
+			<% Tournament.all.each do |tournament| %>
+				<% if @inscriptions.pluck(:tournament_id).include?(tournament.id) %>
+					<tr class="success">
+						<td class="text-center"><%= tournament.name %></td>
+						<td class="text-center"><strong>INSCRITO</strong></td>
+						<td class="text-center">
+							<%= link_to "VER", "#{}", class: "btn btn-primary btn-xs" %> <%= link_to "EDITAR", "#{}", class: "btn btn-warning btn-xs" %>
+						</td>
+					</tr>
+				<% else %>
+					<tr class="danger">
+						<td class="text-center"><%= link_to "#{tournament.name}", inscription_welcome_path(:tournament_id => "#{tournament.id}", :club_id=> "#{current_user.club.id}" ) %></td>
+						<td class="text-center"><strong>NO INSCRITO</strong></td>
+						<td class="text-center">
+							<%= link_to "INSCRIBIRSE", inscription_welcome_path(:tournament_id => "#{tournament.id}", :club_id=> "#{current_user.club.id}" ), class: "btn btn-success btn-xs" %>
+						</td>
+					</tr>
+				<% end %>
+			<% end %>
+		</table>
+	</div>
+</div>
