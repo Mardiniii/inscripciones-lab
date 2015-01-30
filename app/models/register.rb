@@ -4,7 +4,7 @@
 #
 #  id               :integer          not null, primary key
 #  register_type_id :integer
-#  registration_id  :integer
+#  inscription_id   :integer
 #  first_name       :string
 #  second_name      :string
 #  first_last_name  :string

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: registrations
+# Table name: inscriptions
 #
 #  id            :integer          not null, primary key
 #  tournament_id :integer

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :fields
   resources :inscriptions
   devise_for :users
-  get 'registration_welcome' => 'registrations#welcome_registration'
+  get 'inscription_welcome' => 'inscriptions#welcome_inscription'
   root 'welcome#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
