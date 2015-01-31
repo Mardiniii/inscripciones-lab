@@ -22,3 +22,5 @@ tournaments = Tournament.create( [ {
 		end_date: DateTime.strptime("10/30/2015", "%m/%d/%Y"),
 	},
 ] )
+
+days = Day.create([{ name: 'Lunes'}, { name: 'Martes'}, { name: 'Miercoles'}, {name: 'Jueves'}, { name: 'Viernes'}, { name: 'Sabado'}, {name: 'Domingo'} ])

@@ -7,8 +7,8 @@
 			</div>
 			<% @field.field_hours.each_with_index do |field_hour, index| %>
 				<div class="col-xs-3">
-				<h3>Horario #<%= index %> </h3>
-				<p><%= field_hour.day %></p>
+				<h3>Horario #<%= index+1 %> </h3>
+				<p><%= field_hour.day.name %></p>
 				<p>Desde: <%= field_hour.open_hour.hour %></p>
 				<p>Hasta: <%= field_hour.closing_time.hour %></p>
 				</div>

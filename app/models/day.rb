@@ -9,4 +9,5 @@
 #
 
 class Day < ActiveRecord::Base
+	has_many :field_hours
 end
