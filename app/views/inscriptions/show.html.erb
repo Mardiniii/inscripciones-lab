@@ -7,6 +7,7 @@
 			<tr class="info">
 				<th class="text-center">Participante</th>
 				<th class="text-center">Tipo Inscripción</th>
+				<th class="text-center">Documento de Identidad</th>
 				<th class="text-center">Fecha de Nacimiento</th>
 				<th class="text-center">EPS</th>
 				<th class="text-center">Email</th>
@@ -15,6 +16,7 @@
 				<tr class="text-center">
 					<td class="text-left"><%= register.first_name %> <%= register.second_name %> <%= register.first_last_name %> <%= register.second_last_name %></td>
 					<td><%= register.register_type.name %></td>
+					<td><%= register.identification %></td>
 					<td><%= register.date_of_birth %></td>
 					<td><%= register.eps %></td>
 					<td><%= register.email %></td>
