@@ -26,8 +26,8 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12 text-center">
-			<%= link_to 'Editar Inscripción', edit_inscription_path(@inscription, :tournament_id => "#{@inscription.tournament_id}", :club_id=> "#{current_user.club.id}"), class: "btn btn-warning" %>
-			<%= link_to 'Ir a inscripciones', inscription_index_path, class: "btn btn-success" %>
+			<%= link_to 'Editar Inscripción', edit_inscription_path(@inscription, :tournament_id => "#{@inscription.tournament_id}", :club_id=> @club.id), class: "btn btn-warning" %>
+			<%= link_to 'Ir a inscripciones', inscription_index_path, class: "btn btn-success" if current_user.user? %>
 		</div>
 	</div>
 </div>

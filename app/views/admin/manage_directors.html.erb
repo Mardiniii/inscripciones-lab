@@ -1,0 +1,59 @@
+<div class="container-fluid">
+	<h4 class="text-center">SELECCIONE UNA CATEGORIA PARA CARGAR REGISTROS</h4>
+	<div class="row text-center">
+		<%= form_tag directors_path, method: :get do %>
+			<%= hidden_field_tag :club, "CLUB"  %>
+	  	<div class="col-xs-2 col-xs-offset-3 action form-group">
+		  	<%= submit_tag "CLUBES", name: nil, class: "btn btn-lg btn-success" %>		  		
+	  	</div>
+		<% end %>	
+		<%= form_tag directors_path, method: :get do %>
+			<%= hidden_field_tag :president, "PRESIDENT"  %>
+	  	<div class=" col-xs-2 action form-group">
+		  	<%= submit_tag "PRESIDENTES", name: nil, class: "btn btn-lg btn-success" %>		  		
+	  	</div>
+		<% end %>	
+		<%= form_tag directors_path, method: :get do %>
+			  <%= hidden_field_tag :manager, "MANAGER"  %>
+	  	<div class="col-xs-2 action form-group">
+		  	<%= submit_tag "MANAGERS", name: nil, class: "btn btn-lg  btn-success" %>		  		
+	  	</div>
+		<% end %>	
+	</div>	
+	<% if !@clubs.blank? %>
+			<table class="table">
+				<tr>
+					<th>Escudo</th>
+					<th>Nombre</th>
+					<th>Dirección</th>
+					<th>Correo</th>
+					<th>Municipio</th>
+					<th>Telefono</th>
+					<th>Celular</th>
+					<th>Ir a inscripciones</th>
+				</tr>
+				<% @clubs.each do |club| %>
+					<tr>
+						<td class="vert-align"><%= image_tag club.avatar.url(:thumb) %></td>
+						<td class="vert-align"><%= club.name %></td>
+						<td class="vert-align"><%= club.address %></td>
+						<td class="vert-align"><%= club.email %></td>
+						<td class="vert-align"><%= club.municipality %></td>
+						<td class="vert-align"><%= club.phone %></td>
+						<td class="vert-align"><%= club.cellphone %></td>
+						<td class="vert-align"><%= link_to "Inscripciones de este club", inscription_index_path(:club_id => club.id) if club.inscriptions.any? %></td>	
+					</tr>
+				<% end %>
+			</table>
+	<% end %>
+	<% if !@presidents.blank? %>
+		<% @presidents.each do |president| %>
+			<%= president.name %>
+		<% end %>
+	<% end %>
+	<% if !@managers.blank? %>
+		<% @managers.each do |manager| %>
+			<%= manager.name %>
+		<% end %>
+	<% end %>
+</div>

@@ -7,6 +7,15 @@ class AdminController < ApplicationController
 	end
 
   def manage_directors
+    if params[:club].present?
+      @clubs = Club.all
+    end
+    if params[:president].present?
+      @presidents = President.all
+    end
+    if params[:manager].present?
+      @managers = Manager.all
+    end
   end
 
 	def search_register

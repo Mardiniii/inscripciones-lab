@@ -41,13 +41,18 @@ class InscriptionsController < ApplicationController
 	end
 
 	def select_inscription
-		@inscriptions = current_user.club.inscriptions
+		if current_user.user?
+			@inscriptions = current_user.club.inscriptions
+		elsif current_user.admin?
+			@club_id = params[:club_id]
+			@inscriptions = Club.find(@club_id).inscriptions
+		end
 	end
 
 	def show
 		@inscription = Inscription.find(params[:id])
 		@registers = @inscription.registers
-		@club = current_user.club
+		@club = Club.find(@inscription.club_id)
 		@tournament = Tournament.find(@inscription.tournament_id)
 	end
 

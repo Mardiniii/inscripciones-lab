@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'welcome#home'
   get 'admin' => 'admin#home'
   get 'search_register' => 'admin#search_register'
+  get 'directors' => 'admin#manage_directors'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
