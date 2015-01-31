@@ -1,4 +1,5 @@
 class InscriptionsController < ApplicationController
+	before_action :authenticate_user!
 	def welcome_inscription
 		club_id = params[:club_id]
 		tournament_id = params[:tournament_id]

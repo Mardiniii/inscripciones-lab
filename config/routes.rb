@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'inscription_welcome' => 'inscriptions#welcome_inscription'
   get 'inscription_index' => 'inscriptions#select_inscription'
   root 'welcome#home'
+  get 'admin' => 'admin#home'
+  get 'search_register' => 'admin#search_register'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
