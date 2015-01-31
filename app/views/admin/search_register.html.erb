@@ -50,6 +50,7 @@
 							<td><%= register.date_of_birth %></td>
 							<td><%= register.eps %></td>
 							<td><%= register.email %></td>
+							<td><%= Club.find(Inscription.find(register.inscription_id).club_id).name %></td>
 						</tr>
 					<% end %>
 				</table>
