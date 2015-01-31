@@ -19,6 +19,7 @@
 #  identification_number  :string
 #  last_name              :string
 #  cellphone              :string
+#  role                   :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

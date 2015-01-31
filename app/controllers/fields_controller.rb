@@ -44,6 +44,6 @@ class FieldsController < ApplicationController
 
 	private
 		def field_params
-  		params.require(:field).permit(:field_type, :address, field_hours_attributes: [ :id, :day, :open_hour, :closing_time, :_destroy ] )
+  		params.require(:field).permit(:id, :field_type, :address, field_hours_attributes: [ :id, :day_id, :open_hour, :closing_time, :_destroy ] )
 		end
 end

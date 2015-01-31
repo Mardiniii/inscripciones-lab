@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131144438) do
+ActiveRecord::Schema.define(version: 20150131170739) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -37,13 +37,19 @@ ActiveRecord::Schema.define(version: 20150131144438) do
 
   add_index "clubs", ["user_id"], name: "index_clubs_on_user_id"
 
+  create_table "days", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "field_hours", force: :cascade do |t|
     t.time     "open_hour"
     t.time     "closing_time"
     t.integer  "field_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "day"
+    t.integer  "day_id"
   end
 
   add_index "field_hours", ["field_id"], name: "index_field_hours_on_field_id"
@@ -152,6 +158,7 @@ ActiveRecord::Schema.define(version: 20150131144438) do
     t.string   "identification_number"
     t.string   "last_name"
     t.string   "cellphone"
+    t.integer  "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

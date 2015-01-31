@@ -19,6 +19,7 @@
 #  identification_number  :string
 #  last_name              :string
 #  cellphone              :string
+#  role                   :integer
 #
 
 require 'test_helper'

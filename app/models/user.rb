@@ -19,17 +19,25 @@
 #  identification_number  :string
 #  last_name              :string
 #  cellphone              :string
+#  role                   :integer
 #
 
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  enum role: [ :user, :admin]
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_one :club, dependent: :destroy
+  after_initialize :set_default_role, :if => :new_record?
   after_create :send_email
+
+  def set_default_role
+    self.role ||= :user
+  end
 
   def send_email
   	UserMailer.welcome_email(self).deliver
+    new_club_path
   end
 end

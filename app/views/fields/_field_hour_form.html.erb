@@ -2,7 +2,7 @@
 <fieldset class="form-group">
 	<div class="form-group">
 		<%= hour.label :dia %>
-		<%= hour.select :day, options_for_select(FieldHour.days.keys), { } %>
+		<%= hour.collection_select :day_id, Day.all, :id, :name, {prompt: 'Seleccione Dia'} %>
 		<%= hour.label :hora_apertura %>
 		<%= hour.time_select :open_hour, {ampm: true, minute_step: 15, :default => {:hour => '06', :minute => '00'} } %>
 		<%= hour.label :hora_cierre %>

@@ -10,14 +10,13 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(user)
-    if current_user.club
-    	root_path
-    else
+    if user.role == "admin"
+      search_register_path
+    elsif user.role == "user" && user.club
+      puts user.role
+      root_path
+    elsif user.role == "user"
       new_club_path
     end
-  end
-
-  def after_sign_up_path_for(user)
-    root_path
   end
 end

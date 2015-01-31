@@ -23,7 +23,11 @@
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
 	        <li><%= link_to 'HOME', root_path if user_signed_in? && current_user.club %></li>
-	        <li><%= link_to 'INSCRIPCIONES', inscription_index_path if user_signed_in? && current_user.club %></li>   
+	        <li><%= link_to 'INSCRIPCIONES', inscription_index_path if user_signed_in? && current_user.club %></li>
+	        <% if user_signed_in? && current_user.admin? %>
+		        <li><%= link_to 'Buscar Registro', search_register_path %></li>
+						<li><%= link_to 'Clubes y Directivos', directors_path %></li>
+					<% end %>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">	  
 	        <% if user_signed_in? %>

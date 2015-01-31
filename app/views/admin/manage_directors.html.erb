@@ -1,0 +1,105 @@
+<div class="container-fluid">
+	<h4 class="text-center">SELECCIONE UNA CATEGORIA PARA CARGAR REGISTROS</h4>
+	<div class="row text-center">
+		<%= form_tag directors_path, method: :get do %>
+			<%= hidden_field_tag :club, "CLUB"  %>
+	  	<div class="col-xs-2 col-xs-offset-3 action form-group">
+		  	<%= submit_tag "CLUBES", name: nil, class: "btn btn-lg btn-success" %>		  		
+	  	</div>
+		<% end %>	
+		<%= form_tag directors_path, method: :get do %>
+			<%= hidden_field_tag :president, "PRESIDENT"  %>
+	  	<div class=" col-xs-2 action form-group">
+		  	<%= submit_tag "PRESIDENTES", name: nil, class: "btn btn-lg btn-success" %>		  		
+	  	</div>
+		<% end %>	
+		<%= form_tag directors_path, method: :get do %>
+			  <%= hidden_field_tag :manager, "MANAGER"  %>
+	  	<div class="col-xs-2 action form-group">
+		  	<%= submit_tag "MANAGERS", name: nil, class: "btn btn-lg  btn-success" %>		  		
+	  	</div>
+		<% end %>	
+	</div>	
+
+	<% if !@clubs.blank? %>
+		<h2 class="text-center">CLUBES INSCRITOS EN LIGA ANTIOQUIEÑA DE BALONCESTO</h2>
+		<table class="table">
+			<tr>
+				<th class="text-center">Escudo</th>
+				<th class="text-center">Nombre</th>
+				<th class="text-center">Dirección</th>
+				<th class="text-center">Correo</th>
+				<th class="text-center">Municipio</th>
+				<th class="text-center">Telefono</th>
+				<th class="text-center">Celular</th>
+				<th class="text-center">Ir a inscripciones</th>
+			</tr>
+			<% @clubs.each do |club| %>
+				<tr>
+					<td class="vert-align"><%= image_tag club.avatar.url(:thumb) %></td>
+					<td class="vert-align"><%= club.name %></td>
+					<td class="vert-align"><%= club.address %></td>
+					<td class="vert-align"><%= club.email %></td>
+					<td class="vert-align"><%= club.municipality %></td>
+					<td class="vert-align"><%= club.phone %></td>
+					<td class="vert-align"><%= club.cellphone %></td>
+					<td class="vert-align"><%= link_to "Inscripciones de este club", inscription_index_path(:club_id => club.id) if club.inscriptions.any? %></td>	
+				</tr>
+			<% end %>
+		</table>
+	<% end %>
+
+	<% if !@presidents.blank? %>
+		<h2 class="text-center">PRESIDENTES INSCRITOS EN LIGA ANTIOQUIEÑA DE BALONCESTO</h2>
+		<table class="table">
+			<tr>
+				<th class="text-center">Escudo</th>
+				<th class="text-center">Nombre</th>
+				<th class="text-center">Documento de Identidad</th>
+				<th class="text-center">Telefono</th>
+				<th class="text-center">FAX</th>
+				<th class="text-center">Celular</th>
+				<th class="text-center">Email</th>
+				<th class="text-center">Ir al Club</th>
+			</tr>
+			<% @presidents.each do |president| %>
+				<tr>
+					<td class="vert-align"><%= image_tag Club.find(president.club_id).avatar.url(:thumb) %></td>
+					<td class="vert-align"><%= president.name %></td>
+					<td class="vert-align"><%= president.identification %></td>
+					<td class="vert-align"><%= president.phone %></td>
+					<td class="vert-align"><%= president.fax %></td>
+					<td class="vert-align"><%= president.cellphone %></td>
+					<td class="vert-align"><%= president.email %></td>
+					<td class="vert-align"><%= link_to "#{Club.find(president.club_id).name}", Club.find(president.club_id) %></td>
+				</tr>
+			<% end %>
+		</table>
+	<% end %>
+
+	<% if !@managers.blank? %>
+		<h2 class="text-center">MANAGERS INSCRITOS EN LIGA ANTIOQUIEÑA DE BALONCESTO</h2>
+		<table class="table">
+			<tr>
+				<th class="text-center">Escudo</th>
+				<th class="text-center">Nombre</th>
+				<th class="text-center">Documento de Identidad</th>
+				<th class="text-center">Telefono</th>
+				<th class="text-center">Celular</th>
+				<th class="text-center">Email</th>
+				<th class="text-center">Ir al Club</th>
+			</tr>
+			<% @managers.each do |manager| %>
+				<tr>
+					<td class="vert-align"><%= image_tag Club.find(manager.club_id).avatar.url(:thumb) %></td>
+					<td class="vert-align"><%= manager.name %></td>
+					<td class="vert-align"><%= manager.identification %></td>
+					<td class="vert-align"><%= manager.phone %></td>
+					<td class="vert-align"><%= manager.cellphone %></td>
+					<td class="vert-align"><%= manager.email %></td>
+					<td class="vert-align"><%= link_to "#{Club.find(manager.club_id).name}", Club.find(manager.club_id) %></td>
+				</tr>
+			<% end %>
+		</table>
+	<% end %>
+</div>
