@@ -38,6 +38,5 @@ class User < ActiveRecord::Base
 
   def send_email
   	UserMailer.welcome_email(self).deliver
-    new_club_path
   end
 end

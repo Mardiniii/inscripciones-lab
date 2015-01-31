@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+  root 'welcome#home'
   resources :clubs
   resources :fields
   resources :inscriptions
   devise_for :users
   get 'inscription_welcome' => 'inscriptions#welcome_inscription'
   get 'inscription_index' => 'inscriptions#select_inscription'
-  root 'welcome#home'
   get 'admin' => 'admin#home'
   get 'search_register' => 'admin#search_register'
   get 'directors' => 'admin#manage_directors'
