@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(user)
     if user.role == "admin"
-      admin_path
+      search_register_path
     elsif user.role == "user" && user.club
       puts user.role
       root_path
