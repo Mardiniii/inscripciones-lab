@@ -4,7 +4,7 @@
 #
 #  id             :integer          not null, primary key
 #  name           :string
-#  identification :integer
+#  identification :string
 #  phone          :string
 #  fax            :string
 #  cellphone      :string

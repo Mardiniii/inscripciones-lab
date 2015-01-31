@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150130202726) do
+ActiveRecord::Schema.define(version: 20150131144438) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -74,15 +74,16 @@ ActiveRecord::Schema.define(version: 20150130202726) do
     t.string   "phone"
     t.string   "email"
     t.integer  "club_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "identification"
   end
 
   add_index "managers", ["club_id"], name: "index_managers_on_club_id"
 
   create_table "presidents", force: :cascade do |t|
     t.string   "name"
-    t.integer  "identification"
+    t.string   "identification"
     t.string   "phone"
     t.string   "fax"
     t.string   "cellphone"
@@ -116,6 +117,7 @@ ActiveRecord::Schema.define(version: 20150130202726) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "identification"
   end
 
   add_index "registers", ["inscription_id"], name: "index_registers_on_inscription_id"

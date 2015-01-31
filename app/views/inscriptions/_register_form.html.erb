@@ -11,6 +11,16 @@
 				<%= register.label :segundo_apellido %>
 				<%= register.text_field :second_last_name %>
 			</div>
+			<div>
+				<div class="inline-register">
+					<%= register.label :imagen %>
+				  <%= register.file_field :avatar, class: "inline-register" %>
+				</div>
+				<div class="inline-register">
+				 	<%= register.label :documento_de_identidad %>
+					<%= register.text_field :identification %>
+				</div>
+			</div>
 			<div class="form-group">
 				<%= register.label :tipo_de_inscripción %>
 				<%= register.collection_select :register_type_id, RegisterType.all, :id, :name, {prompt: 'Seleccione un tipo'} %>
@@ -21,10 +31,6 @@
 				<%= register.label :email %>
 				<%= register.text_field :email %>
 			</div>
-			<div class="form-group">
-				<%= register.label :imagen %>
-			  <%= register.file_field :avatar, class: "form-group" %>
-			 </div>
 			<div class="form-group">					
 				<%= register.hidden_field :_destroy %>
 				<%= link_to "Borrar Participante", "#", class: "remove_field btn btn-danger" %>

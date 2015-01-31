@@ -58,6 +58,6 @@ class InscriptionsController < ApplicationController
 
 	private
 		def inscription_params
-  		params.require(:inscription).permit(:club_id, :tournament_id, registers_attributes: [ :id, :register_type_id, :first_name, :avatar, :second_name, :first_last_name , :second_last_name , :date_of_birth, :eps, :email , :_destroy ])
+  		params.require(:inscription).permit(:club_id, :tournament_id, registers_attributes: [ :id, :register_type_id, :identification, :first_name, :avatar, :second_name, :first_last_name , :second_last_name , :date_of_birth, :eps, :email , :_destroy ])
 		end
 end
