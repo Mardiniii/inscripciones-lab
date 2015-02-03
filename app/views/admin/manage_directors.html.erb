@@ -23,7 +23,7 @@
 
 	<% if !@clubs.blank? %>
 		<h2 class="text-center">CLUBES INSCRITOS EN LIGA ANTIOQUIEÑA DE BALONCESTO</h2>
-		<table class="table">
+		<table class="table table-hover">
 			<tr>
 				<th class="text-center">Escudo</th>
 				<th class="text-center">Nombre</th>
@@ -43,7 +43,7 @@
 					<td class="vert-align"><%= club.municipality %></td>
 					<td class="vert-align"><%= club.phone %></td>
 					<td class="vert-align"><%= club.cellphone %></td>
-					<td class="vert-align"><%= link_to "Inscripciones de este club", inscription_index_path(:club_id => club.id) if club.inscriptions.any? %></td>	
+					<td class="vert-align"><%= link_to "Inscripciones de este club", inscription_index_path(:club_id => club.id) %></td>	
 				</tr>
 			<% end %>
 		</table>

@@ -39,6 +39,19 @@ class AdminController < ApplicationController
     end
 	end
 
+  def teams
+    if params[:tournament_id].present?
+      puts "#{params[:tournament_id]}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+      @inscriptions = Inscription.where("tournament_id = ?", params[:tournament_id])
+    end
+  end
+
+  def coaches
+  end
+
+  def mosaico
+  end
+
 	def admin_only
     unless current_user.admin?
       redirect_to root_path, :alert => "Access denied."

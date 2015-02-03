@@ -4,7 +4,7 @@
 			<%= form_tag search_register_path, method: :get do %>
 				<div class="col-xs-6">
 				  <div class="form-group">
-				    <%= select_tag :register_type_id, options_from_collection_for_select(RegisterType.all, "id", "name", params[:register_type_id]), prompt: "Selecction el tipo de Registro", class: "form-control"%>
+				    <%= select_tag :register_type_id, options_from_collection_for_select(RegisterType.all, "id", "name", params[:register_type_id]), prompt: "Selecction el tipo de Registro", class: "form-control" %>
 				  </div>
 				  <div class="form-group">
 			      <%= text_field_tag :identification, params[:identification], class: "form-control", placeholder: "Ingrese numero de identificación" %>

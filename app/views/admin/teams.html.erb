@@ -1,0 +1,47 @@
+<div class="container-fluid">
+	<div class="row text-center">
+		<div class="col-md-6 col-md-offset-3">
+			<%= form_tag teams_path, method: :get do %>
+				<div class="col-md-6 text-center">
+					<%= select_tag :tournament_id, options_from_collection_for_select(Tournament.all, "id", "name", params[:tournament_id]), prompt: "Selecction el torneo", class: "form-control" %>
+				</div>
+				<div class="col-md-6 text-left">
+					<%= submit_tag "EQUIPOS", name: nil, class: "btn btn-success" %>
+				</div>		  		
+			<% end %>
+		</div>
+	</div>
+	<div class="row">
+		<% if !@inscriptions.blank? %>
+			<div class="col-xs-12">	
+				<table class="table table-hover">
+					<tr class="info">
+						<th class="text-center">Escudo</th>
+						<th class="text-center">Nombre</th>
+						<th class="text-center">Dirección</th>
+						<th class="text-center">Correo</th>
+						<th class="text-center">Municipio</th>
+						<th class="text-center">Telefono</th>
+						<th class="text-center">Celular</th>
+						<th class="text-center">Ir a inscripciones</th>
+					</tr>
+					<% @inscriptions.each do |inscription| %>
+						<% club = Club.find(inscription.club_id) %>
+						<tr>
+							<td class="vert-align"><%= image_tag club.avatar.url(:thumb) %></td>
+							<td class="vert-align"><%= club.name %></td>
+							<td class="vert-align"><%= club.address %></td>
+							<td class="vert-align"><%= club.email %></td>
+							<td class="vert-align"><%= club.municipality %></td>
+							<td class="vert-align"><%= club.phone %></td>
+							<td class="vert-align"><%= club.cellphone %></td>
+							<td class="vert-align"><%= link_to "Inscripciones de este club", inscription_index_path(:club_id => club.id) %></td>
+						</tr>
+					<% end %>
+				</table>
+			</div>
+		<% else %>
+			<h4 class="text-center">NO SE ENCONTRÓ NINGÚN RESULTADO ASOCIADO A ESTA BUSQUEDA</h4>
+		<% end %>
+	</div>
+</div>

@@ -27,6 +27,9 @@
 	        <% if user_signed_in? && current_user.admin? %>
 		        <li><%= link_to 'Buscar Registro', search_register_path %></li>
 						<li><%= link_to 'Clubes y Directivos', directors_path %></li>
+						<li><%= link_to 'Equipos Por Torneo', teams_path %></li>
+						<li><%= link_to 'Entrenadores Por Torneo', "oe" %></li>
+						<li><%= link_to 'Mosaicos', "oe" %></li>
 					<% end %>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">	  
@@ -35,7 +38,7 @@
 					<li><%= link_to 'IR A TU CLUB', current_user.club if !current_page?(current_user.club) %></li>
 					<li><%= link_to 'CANCHAS', fields_path %></li>
 				<% else %>
-					<li><%= link_to 'CREA TU CLUB', new_club_path %></li>
+					<li><%= link_to 'CREA TU CLUB', new_club_path if current_user.user? %></li>
 				<% end %>
 	        	<li><%= link_to 'LOG OUT', destroy_user_session_path, method: :delete %></li>
 	        <% else %>
