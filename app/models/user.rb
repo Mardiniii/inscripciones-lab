@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   enum role: [ :user, :admin]
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_one :club, dependent: :destroy
+  has_one :club
   after_initialize :set_default_role, :if => :new_record?
   after_create :send_email
 

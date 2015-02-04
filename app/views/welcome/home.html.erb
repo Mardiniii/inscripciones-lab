@@ -6,7 +6,12 @@
 		        	<div class="content" id="initial_login">		        	
 			        	<h3>Para realizar una nueva inscripción o ver tus inscripciones actuales, click aqui: </h3>
 			        	<%= link_to 'INSCRIPCIONES', inscription_index_path, class: "btn btn-lg btn-success" %>
-			        </div>	
+			        </div>
+			       <% elsif user_signed_in? && current_user.user? && !current_user.club %>
+			       	<div class="content" id="initial_login">		        	
+			        	<h3>Porfavor crea tu club en el siguiente enlace: </h3>
+			        	<%= link_to 'Crea Tu Club', new_club_path, class: "btn btn-lg btn-success" %>
+			        </div>
 		        <% elsif user_signed_in? && current_user.admin? %>
 		        	<div class="content" id="initial_login">		        	
 			        	<h3>Bienvenido Administrador, para buscar un registro en la base de datos, click aqui: </h3>

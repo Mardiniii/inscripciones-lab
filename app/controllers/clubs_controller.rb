@@ -11,6 +11,7 @@ class ClubsController < ApplicationController
 		@club = Club.new(club_params)
 		@club.user_id = current_user.id
 		if @club.save
+			UserMailer.welcome_club_email(@club).deliver_now
 		  redirect_to @club
 		else
 		  render action: :new
