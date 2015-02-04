@@ -1,6 +1,7 @@
 <div class="container-fluid">
 	<div class="row text-center">
-		<div class="col-xs-6 col-xs-offset-3">
+		<h2>ELJIA UN TORNEO PARA CARGAR LOS EQUIPOS INSCRITOS</h2>
+		<div class="col-xs-6 col-xs-offset-3" id="teams_by_tournament">
 			<%= form_tag teams_path, method: :get do %>
 				<div class="col-xs-6 text-center">
 					<%= select_tag :tournament_id, options_from_collection_for_select(Tournament.all, "id", "name", params[:tournament_id]), prompt: "Selecction el torneo", class: "form-control" %>
@@ -35,8 +36,8 @@
 							<td class="vert-align"><%= inscription.club.municipality %></td>
 							<td class="vert-align"><%= inscription.club.phone %></td>
 							<td class="vert-align"><%= inscription.club.cellphone %></td>
-							<td class="vert-align"><%= link_to "Inscripciones de este club", inscription_index_path(:club_id => inscription.club.id) %></td>
-							<td class="vert-align"><%= link_to "Mosaico", mosaico_path(:inscription_id => inscription.id) %></td>
+							<td class="vert-align"><%= link_to "Inscripciones", inscription_index_path(:club_id => inscription.club.id), class: "btn btn-info" %></td>
+							<td class="vert-align"><%= link_to "Mosaico", mosaico_path(:inscription_id => inscription.id), class: "btn btn-info" %></td>
 						</tr>
 					<% end %>
 				</table>
