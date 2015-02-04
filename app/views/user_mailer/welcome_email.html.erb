@@ -4,15 +4,16 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Señ@r <%= @user.name %> <%= @user.last_name %></br>Bienvenido al sistema de inscripciones de la Liga Antioqueña de Baloncesto</h1>
+    <h1><%= @user.name.upcase %> <%= @user.last_name.upcase %></br>Bienvenido al sistema de inscripciones de la Liga Antioqueña de Baloncesto</h1>
     <p>
       Su registro ha sido completado con exito, para gestionar el registro de su club y todas las inscripciones de este debe ingresar a la plataforma con los siguientes datos:</br>
-      Usuario: <%= @user.email %></br>
-      Contraseña:  <%= @user.password %><br>
-    </p>
+      </br>
+      <strong>Usuario:</strong> <%= @user.email %></br>
+      <strong>Contraseña:</strong>  <%= @user.password %></br>      
+    </p></br>
     <p>
       Para entrar a la plataforma visite el siguiente link: www.eventoslab.com
-    </p>
+    </p></br>
     <p>Gracias por utilizar nuestros servicioes le deseamos un feliz dia!</p>
   </body>
 </html>

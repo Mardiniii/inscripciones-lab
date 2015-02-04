@@ -9,7 +9,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <h1>Señ@r <%= @user.name %> <%= @user.last_name %></br>Bienvenido al sistema de inscripciones de la Liga Antioqueña de Baloncesto</h1>
+    <h1><%= @user.name.upcase %> <%= @user.last_name.upcase %></br>Bienvenido al sistema de inscripciones de la Liga Antioqueña de Baloncesto</h1>
     <p>
       El registro de su Club ha sido completado con exito, para gestionar las inscripciones de este debe ingresar a la plataforma con los datos enviados anteriormente al momento de realizar su inscripción.</br>
 

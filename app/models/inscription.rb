@@ -19,6 +19,6 @@ class Inscription < ActiveRecord::Base
  
 
   def send_email
-  	UserMailer.new_inscription_email(self).deliver
+  	UserMailer.new_inscription_email(self).deliver_now
   end
 end

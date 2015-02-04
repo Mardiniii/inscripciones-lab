@@ -32,6 +32,6 @@ class Club < ActiveRecord::Base
   validates_associated :president, :manager
 
   def send_email
-  	UserMailer.welcome_club_email(self).deliver
+  	UserMailer.welcome_club_email(self).deliver_now
   end
 end
