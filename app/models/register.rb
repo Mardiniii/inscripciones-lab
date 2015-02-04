@@ -27,4 +27,5 @@ class Register < ActiveRecord::Base
   belongs_to :register_type
   belongs_to :inscription
   scope :coach, -> { where(register_type_id: 1) }
+  scope :player, -> { where(register_type_id: 2)}
 end

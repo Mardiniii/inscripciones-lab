@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'teams' => 'admin#teams'
   get 'coaches' => 'admin#coaches'
   get 'mosaico' => 'admin#mosaico'
+  get 'analitics' => 'admin#analitics'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

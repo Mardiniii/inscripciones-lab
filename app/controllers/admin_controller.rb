@@ -73,6 +73,16 @@ class AdminController < ApplicationController
     @registers = @inscription.registers
   end
 
+  def analitics
+    @clubs = Club.all.count
+    @presidents = President.all.count
+    @managers = Manager.all.count
+    @inscriptions = Inscription.all.count
+    @fields = Field.all.count
+    @players = Register.all.player.count
+    @coaches = Register.all.coach.count
+  end
+
 	def admin_only
     unless current_user.admin?
       redirect_to root_path, :alert => "Access denied."
