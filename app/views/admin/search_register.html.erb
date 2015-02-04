@@ -34,6 +34,7 @@
 			<div class="col-xs-12">	
 				<table class="table table-hover">
 					<tr class="info">
+						<th class="text-center">Imagen</th>								
 						<th class="text-center">Participante</th>
 						<th class="text-center">Tipo Inscripción</th>
 						<th class="text-center">Documento de Identidad</th>
@@ -44,6 +45,7 @@
 					</tr>
 					<% @registers.each do |register| %>
 						<tr class="text-center">
+							<td class="vert-align"><%= image_tag register.avatar.url(:thumb) %></td>
 							<td class="text-left"><%= register.first_name %> <%= register.second_name %> <%= register.first_last_name %> <%= register.second_last_name %></td>
 							<td><%= register.register_type.name %></td>
 							<td><%= register.identification %></td>
