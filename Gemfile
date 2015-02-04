@@ -14,6 +14,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'annotate', '~> 2.6.5'
 gem 'hirb'
 gem "paperclip", :git => "http://github.com/thoughtbot/paperclip.git"
+gem 'aws-sdk-v1'
 
 group :development, :test do
 	gem 'sqlite3'
@@ -28,5 +29,3 @@ group :production do
      gem 'pg'
      gem 'rails_12factor'
 end
-
-
