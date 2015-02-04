@@ -35,10 +35,15 @@
  
 .navbar-default .navbar-nav > li > a {
 	color: black;
-	-webkit-transition: all .3s;
-	-moz-transition: all .3s;
-	transition: all .3s;
+	-webkit-transition: all .4s;
+	-moz-transition: all .4s;
+	transition: all .4s;
 	font-size: 15px;
+	padding-bottom: 5px;
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 10px;
+	margin-right: 10px;
  }
 
 .navbar-default .navbar-brand:hover {
@@ -46,7 +51,10 @@
  }
  
 .navbar-default .navbar-nav > li > a:hover {
-	font-size: 18px;
+	border-bottom: 3px solid black;
+	padding-bottom: 5px;
+	padding-left: 0;
+	padding-right: 0;
  }
  
  #logo_home {

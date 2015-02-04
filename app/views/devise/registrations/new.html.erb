@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 col-xs-offset-3" id="new_register">
+    <div class="col-xs-6 col-xs-offset-3 new_register">
       <h3 class="text-center">Registre una cuenta para gestionar todas las inscripciones de su club</h3>
       <p class="text-center">Al finalizar el registro del delegado recibira un correo con las instrucciones para proceder con el proceso de inscripción.</p>
 
@@ -33,15 +33,15 @@
         </div>
 
         <div class="field form-group">
-          <%= f.label :password %>
+          <%= f.label :contraseña %>
           <% if @validatable %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em>(<%= @minimum_password_length %> mínimo 8 caracteres)</em>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "off", :class => 'form-control' %>
         </div>
 
         <div class="field form-group">
-          <%= f.label :password_confirmation %><br />
+          <%= f.label :confirmar_contraseña %><br />
           <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control' %>
         </div>
 
