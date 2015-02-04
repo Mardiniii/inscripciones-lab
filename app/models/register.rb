@@ -26,4 +26,6 @@ class Register < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   belongs_to :register_type
   belongs_to :inscription
+  scope :coach, -> { where(register_type_id: 1) }
+  scope :player, -> { where(register_type_id: 2)}
 end

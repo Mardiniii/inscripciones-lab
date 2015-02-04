@@ -1,0 +1,49 @@
+<div class="container-fluid">
+	<div class="row text-center">
+		<h2>ELJIA UN TORNEO PARA CARGAR LOS EQUIPOS INSCRITOS</h2>
+		<div class="col-xs-6 col-xs-offset-3" id="teams_by_tournament">
+			<%= form_tag teams_path, method: :get do %>
+				<div class="col-xs-6 text-center">
+					<%= select_tag :tournament_id, options_from_collection_for_select(Tournament.all, "id", "name", params[:tournament_id]), prompt: "Selecction el torneo", class: "form-control" %>
+				</div>
+				<div class="col-xs-6 text-left">
+					<%= submit_tag "EQUIPOS", name: nil, class: "btn btn-success" %>
+				</div>		  		
+			<% end %>
+		</div>
+	</div>
+	<div class="row">
+		<% if !@inscriptions.blank? %>
+			<div class="col-xs-12">	
+				<table class="table table-hover">
+					<tr class="info">
+						<th class="text-center">Escudo</th>
+						<th class="text-center">Nombre</th>
+						<th class="text-center">Dirección</th>
+						<th class="text-center">Correo</th>
+						<th class="text-center">Municipio</th>
+						<th class="text-center">Telefono</th>
+						<th class="text-center">Celular</th>
+						<th class="text-center">Ir a inscripciones</th>
+						<th class="text-center">Mosaico</th>
+					</tr>
+					<% @inscriptions.each do |inscription| %>
+						<tr>
+							<td class="vert-align"><%= image_tag inscription.club.avatar.url(:thumb) %></td>
+							<td class="vert-align"><%= inscription.club.name %></td>
+							<td class="vert-align"><%= inscription.club.address %></td>
+							<td class="vert-align"><%= inscription.club.email %></td>
+							<td class="vert-align"><%= inscription.club.municipality %></td>
+							<td class="vert-align"><%= inscription.club.phone %></td>
+							<td class="vert-align"><%= inscription.club.cellphone %></td>
+							<td class="vert-align"><%= link_to "Inscripciones", inscription_index_path(:club_id => inscription.club.id), class: "btn btn-info" %></td>
+							<td class="vert-align"><%= link_to "Mosaico", mosaico_path(:inscription_id => inscription.id), class: "btn btn-info" %></td>
+						</tr>
+					<% end %>
+				</table>
+			</div>
+		<% else %>
+			<h4 class="text-center">NO SE ENCONTRÓ NINGÚN RESULTADO ASOCIADO A ESTA BUSQUEDA</h4>
+		<% end %>
+	</div>
+</div>

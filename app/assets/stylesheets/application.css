@@ -128,4 +128,13 @@
     vertical-align: middle;
 }
 /*------------------------------*/
+/*------ADMIN VIEW-----------*/
+#teams_by_tournament {
+	margin-bottom: 15px;
+}
+
+#analitics {
+	margin-bottom: 25px;
+}
+/*---------------------------*/
 

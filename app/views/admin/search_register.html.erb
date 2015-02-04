@@ -1,10 +1,10 @@
-<div class="container-fluid">
 	<div class="row">
-		<h4 class="text-center">INGRESE LOS DATOS A CONTINUACIÓN PARA BUSCAR UN REGISTRO EN LA BASE DE DATOS</h4>
+		<div class="container-fluid">
+			<h4 class="text-center">INGRESE ALGUNO DE LOS DATOS A CONTINUACIÓN PARA BUSCAR UN REGISTRO EN LA BASE DE DATOS</h4>
 			<%= form_tag search_register_path, method: :get do %>
 				<div class="col-xs-6">
 				  <div class="form-group">
-				    <%= select_tag :register_type_id, options_from_collection_for_select(RegisterType.all, "id", "name", params[:register_type_id]), prompt: "Selecction el tipo de Registro", class: "form-control"%>
+				    <%= select_tag :register_type_id, options_from_collection_for_select(RegisterType.all, "id", "name", params[:register_type_id]), prompt: "Selecction el tipo de Registro", class: "form-control" %>
 				  </div>
 				  <div class="form-group">
 			      <%= text_field_tag :identification, params[:identification], class: "form-control", placeholder: "Ingrese numero de identificación" %>
@@ -30,10 +30,12 @@
 			  	<%= submit_tag "Buscar", name: nil, class: "btn btn-success" %>		  		
 		  	</div>
 			<% end %>
+		</div>
 		<% if !@registers.blank? %>
 			<div class="col-xs-12">	
 				<table class="table table-hover">
 					<tr class="info">
+						<th class="text-center">Imagen</th>								
 						<th class="text-center">Participante</th>
 						<th class="text-center">Tipo Inscripción</th>
 						<th class="text-center">Documento de Identidad</th>
@@ -44,13 +46,14 @@
 					</tr>
 					<% @registers.each do |register| %>
 						<tr class="text-center">
-							<td class="text-left"><%= register.first_name %> <%= register.second_name %> <%= register.first_last_name %> <%= register.second_last_name %></td>
-							<td><%= register.register_type.name %></td>
-							<td><%= register.identification %></td>
-							<td><%= register.date_of_birth %></td>
-							<td><%= register.eps %></td>
-							<td><%= register.email %></td>
-							<td><%= Club.find(Inscription.find(register.inscription_id).club_id).name %></td>
+							<td class="vert-align"><%= image_tag register.avatar.url(:thumb) %></td>
+							<td class="text-left vert-align"><%= register.first_name %> <%= register.second_name %> <%= register.first_last_name %> <%= register.second_last_name %></td>
+							<td class="vert-align"><%= register.register_type.name %></td>
+							<td class="vert-align"><%= register.identification %></td>
+							<td class="vert-align"><%= register.date_of_birth %></td>
+							<td class="vert-align"><%= register.eps %></td>
+							<td class="vert-align"><%= register.email %></td>
+							<td class="vert-align"><%= Club.find(Inscription.find(register.inscription_id).club_id).name %></td>
 						</tr>
 					<% end %>
 				</table>
@@ -59,4 +62,3 @@
 			<h4 class="text-center">NO SE ENCONTRÓ NINGÚN RESULTADO ASOCIADO A ESTA BUSQUEDA</h4>
 		<% end %>		
 	</div>
-</div>
