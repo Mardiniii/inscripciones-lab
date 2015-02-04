@@ -10,4 +10,12 @@ class UserMailer < ApplicationMailer
 		@club = club
 		mail(to: @user.email; sezama08@gmail.com, subject: 'Bienvenido a Inscripciones - LAB, haz registrado un nuevo Club')
 	end
+
+	def new_inscription_email(inscription)
+		@inscription = inscription
+		@club = inscription.club
+		@user = @club.user
+		@registers = inscription.registers
+		mail(to: @user.email; sezama08@gmail.com, subject: 'Inscripciones - LAB, haz realizado una nueva inscripción')
+	end
 end
