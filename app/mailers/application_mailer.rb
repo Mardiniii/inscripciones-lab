@@ -1,4 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "Liga Antioqueña de Baloncesto"
+  default 'Content-Transfer-Encoding' => '7bit',
+  				from: "Liga Antioqueña de Baloncesto"
   layout 'mailer'
 end
