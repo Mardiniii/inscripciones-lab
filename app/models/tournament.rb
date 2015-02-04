@@ -10,9 +10,14 @@
 #  updated_at   :datetime         not null
 #  name         :string
 #  description  :text
+#  deadline     :date
 #
 
 class Tournament < ActiveRecord::Base
   belongs_to :categorie
   has_many :inscriptions, dependent: :destroy
+
+  def expired?
+  	Date.current > deadline 
+  end
 end

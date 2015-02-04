@@ -10,6 +10,7 @@
 #  updated_at   :datetime         not null
 #  name         :string
 #  description  :text
+#  deadline     :date
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
