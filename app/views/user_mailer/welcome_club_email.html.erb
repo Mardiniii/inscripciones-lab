@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="style.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <h1><%= @user.name.upcase %> <%= @user.last_name.upcase %></br>Bienvenido al sistema de inscripciones de la Liga Antioqueña de Baloncesto</h1>
+    <p>
+      El registro de su Club ha sido completado con exito, para gestionar las inscripciones de este debe ingresar a la plataforma con los datos enviados anteriormente al momento de realizar su inscripción.</br>
+
+      Información del Club:
+    </p>
+    <div class="col-xs-4 col-xs-offfset-4 text-left">
+    	<%= image_tag @club.avatar.url(:medium) %>
+    	<h2 class="text-center">CLUB</h2>
+    	<h4>Nombre: <%= @club.name %></h4>
+    	<h4>Dirección: <%= @club.address %></h4>
+    	<h4>Correo del Club: <%= @club.email %></h4>
+    	<h4>Municipio: <%= @club.municipality %></h4>
+    	<h4>Telefono: <%= @club.phone %></h4>
+    	<h4>Celular: <%= @club.cellphone %></h4>
+    </div>
+    <p>
+      Para entrar a la plataforma visite el siguiente link: www.eventoslab.com
+    </p>
+    <p>Gracias por utilizar nuestros servicioes le deseamos un feliz dia!</p>
+  </body>
+</html>

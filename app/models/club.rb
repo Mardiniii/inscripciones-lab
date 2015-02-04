@@ -26,7 +26,12 @@ class Club < ActiveRecord::Base
   has_many :fields, dependent: :destroy
   has_one :manager, dependent: :destroy
   has_many :inscriptions
+  after_create :send_email
 
   accepts_nested_attributes_for :president, :manager
   validates_associated :president, :manager
+
+  def send_email
+  	UserMailer.welcome_club_email(self).deliver_now
+  end
 end
