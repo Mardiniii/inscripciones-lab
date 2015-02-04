@@ -1,32 +1,51 @@
 <div class="container-fluid">
 	<div class="row">
-		<table class="table">
+		<table class="table table-hover">
 			<tr>
 				<th class="text-center">TORNEO</th>
-				<th class="text-center">ESTADO</th>
-				<th class="text-center">OPCIONES</th>
+				<th class="text-center">ESTADO DEL CLUB</th>
+				<th class="text-center">ESTADO DE INSCRIPCIÓN</th>	
+				<th class="text-center">OPCIONES</th>			
 			</tr>
 			<% Tournament.all.each do |tournament| %>
 				<% if @inscriptions.pluck(:tournament_id).include?(tournament.id) %>
 					<tr class="success">
 						<td class="text-center vert-align"><%= tournament.name %></td>
 						<td class="text-center vert-align"><strong>INSCRITO</strong></td>
-						<td class="text-center vert-align">
-							<%= link_to "Ver", @inscriptions.find_by_tournament_id(tournament.id) , class: "btn btn-primary" %>
-							<%= link_to "Editar", edit_inscription_path(@inscriptions.find_by_tournament_id(tournament.id), :tournament_id => "#{tournament.id}", :club_id=> "#{current_user.club.id}"), class: "btn btn-warning" if current_user.user? %> 
-							<%= link_to "Editar", edit_inscription_path(@inscriptions.find_by_tournament_id(tournament.id), :tournament_id => "#{tournament.id}", :club_id=> @club_id), class: "btn btn-warning" if current_user.admin? %> 
-							<%= link_to inscription_path(@inscriptions.find_by_tournament_id(tournament.id)), method: :delete, data: { confirm: '¿Esta seguro que desea eliminar esta inscripción?' }, class: "btn btn-danger" do %><span>Eliminar</span><% end %>
-						</td>
+							<% if tournament.expired? %>
+								<td class="text-center vert-align"><strong>CERRADA</strong></td>
+								<td class="text-center vert-align">
+									<%= link_to "Ver", @inscriptions.find_by_tournament_id(tournament.id) , class: "btn btn-primary" %>
+								</td>
+							<% else %>
+								<td class="text-center vert-align"><strong>CERRADA</strong></td>
+								<td class="text-center vert-align">
+									<%= link_to "Ver", @inscriptions.find_by_tournament_id(tournament.id) , class: "btn btn-primary" %>
+									<%= link_to "Editar", edit_inscription_path(@inscriptions.find_by_tournament_id(tournament.id), :tournament_id => "#{tournament.id}", :club_id=> "#{current_user.club.id}"), class: "btn btn-warning" if current_user.user? %> 
+									<%= link_to "Editar", edit_inscription_path(@inscriptions.find_by_tournament_id(tournament.id), :tournament_id => "#{tournament.id}", :club_id=> @club_id), class: "btn btn-warning" if current_user.admin? %> 
+									<%= link_to inscription_path(@inscriptions.find_by_tournament_id(tournament.id)), method: :delete, data: { confirm: '¿Esta seguro que desea eliminar esta inscripción?' }, class: "btn btn-danger" do %><span>Eliminar</span><% end %>
+								</td>
+							<% end %>
 					</tr>
 				<% else %>
-					<tr class="danger">
-						<td class="text-center vert-align"><%= link_to "#{tournament.name}", inscription_welcome_path(:tournament_id => "#{tournament.id}", :club_id=> "#{current_user.club.id}" ) if current_user.user? %><%= link_to "#{tournament.name}", inscription_welcome_path(:tournament_id => "#{tournament.id}", :club_id=> @club_id ) if current_user.admin? %></td>
-						<td class="text-center vert-align"><strong>NO INSCRITO</strong></td>
-						<td class="text-center vert-align">
-							<%= link_to "Realizar Inscripción", inscription_welcome_path(:tournament_id => "#{tournament.id}", :club_id=> "#{current_user.club.id}" ), class: "btn btn-success" if current_user.user? %>
-							<%= link_to "Realizar Inscripción", inscription_welcome_path(:tournament_id => "#{tournament.id}", :club_id=> @club_id ), class: "btn btn-success" if current_user.admin? %>
-						</td>
-					</tr>
+					<% if tournament.expired? %>
+						<tr class="danger">
+							<td class="text-center vert-align"><%= tournament.name %></td>
+							<td class="text-center vert-align"><strong>NO INSCRITO</strong></td>
+							<td class="text-center vert-align"><strong>CERRADA</strong></td>
+							<td class="text-center vert-align"><strong>NO HAY OPCIONES</strong></td>
+						</tr>
+					<% else %>
+						<tr class="danger">
+							<td class="text-center vert-align"><%= link_to "#{tournament.name}", inscription_welcome_path(:tournament_id => "#{tournament.id}", :club_id=> "#{current_user.club.id}" ) if current_user.user? %><%= link_to "#{tournament.name}", inscription_welcome_path(:tournament_id => "#{tournament.id}", :club_id=> @club_id ) if current_user.admin? %></td>
+							<td class="text-center vert-align"><strong>NO INSCRITO</strong></td>
+							<td class="text-center vert-align"><strong>ABIERTA</strong></td>
+							<td class="text-center vert-align">
+								<%= link_to "Realizar Inscripción", inscription_welcome_path(:tournament_id => "#{tournament.id}", :club_id=> "#{current_user.club.id}" ), class: "btn btn-success" if current_user.user? %>
+								<%= link_to "Realizar Inscripción", inscription_welcome_path(:tournament_id => "#{tournament.id}", :club_id=> @club_id ), class: "btn btn-success" if current_user.admin? %>
+							</td>
+						</tr>
+					<% end %>
 				<% end %>
 			<% end %>
 		</table>

@@ -10,6 +10,7 @@
 #  updated_at   :datetime         not null
 #  name         :string
 #  description  :text
+#  deadline     :date
 #
 
 require 'test_helper'

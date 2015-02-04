@@ -1,5 +1,6 @@
 class InscriptionsController < ApplicationController
 	before_action :authenticate_user!
+
 	def welcome_inscription
 		club_id = params[:club_id]
 		tournament_id = params[:tournament_id]
@@ -7,13 +8,17 @@ class InscriptionsController < ApplicationController
 		@tournament = Tournament.find(tournament_id)
 	end
 
-	def new
-		@club_id = params[:club_id]
+	def new		
 		@tournament_id = params[:tournament_id]
-		@club = Club.find(@club_id)
 		@tournament = Tournament.find(@tournament_id)
-		@inscription = Inscription.new
-		@inscription.registers.build
+		if @tournament.expired?
+			redirect_to inscription_index_path
+		else
+			@club_id = params[:club_id]
+			@club = Club.find(@club_id)	
+			@inscription = Inscription.new
+			@inscription.registers.build
+		end
 	end
 
 	def create
@@ -26,11 +31,16 @@ class InscriptionsController < ApplicationController
 	end
 
 	def edit
-		@inscription = Inscription.find(params[:id])
-		@club_id = params[:club_id]
 		@tournament_id = params[:tournament_id]
-		@club = Club.find(@club_id)
 		@tournament = Tournament.find(@tournament_id)
+
+		if @tournament.expired?
+			redirect_to inscription_index_path
+		else
+			@inscription = Inscription.find(params[:id])
+			@club_id = params[:club_id]
+			@club = Club.find(@club_id)
+		end
 	end
 
 	def update
