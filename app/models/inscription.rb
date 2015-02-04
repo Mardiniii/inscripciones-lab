@@ -14,7 +14,7 @@ class Inscription < ActiveRecord::Base
   belongs_to :club
   has_many :registers, dependent: :destroy
   after_create :send_email
-  accepts_nested_attributes_for :registers, :reject_if => :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :registers, :limit => 25, :reject_if => :all_blank, allow_destroy: true
   validates_associated :registers
 
   def send_email

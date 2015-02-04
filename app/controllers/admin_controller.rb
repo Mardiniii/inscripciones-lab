@@ -36,23 +36,23 @@ class AdminController < ApplicationController
       if params[:second_last_name].present?
         @registers = @registers.where("second_last_name = ?", params[:second_last_name])
       end
-      else
-        if params[:identification].present?
-          @registers = Register.where("identification = ?", params[:identification])
-        end
-        if params[:first_name].present?
-          @registers = Register.where("first_name = ?", params[:first_name])
-        end
-        if params[:second_name].present?
-          @registers = Register.where("second_name = ?", params[:second_name])
-        end
-        if params[:first_last_name].present?
-          @registers = Register.where("first_last_name = ?", params[:first_last_name])
-        end
-        if params[:second_last_name].present?
-          @registers = Register.where("second_last_name = ?", params[:second_last_name])
-        end
+    else
+      if params[:identification].present?
+        @registers = Register.where("identification = ?", params[:identification])
       end
+      if params[:first_name].present?
+        @registers = Register.where("first_name = ?", params[:first_name])
+      end
+      if params[:second_name].present?
+        @registers = Register.where("second_name = ?", params[:second_name])
+      end
+      if params[:first_last_name].present?
+        @registers = Register.where("first_last_name = ?", params[:first_last_name])
+      end
+      if params[:second_last_name].present?
+        @registers = Register.where("second_last_name = ?", params[:second_last_name])
+      end
+    end
 	end
 
   def teams
