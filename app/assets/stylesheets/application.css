@@ -54,9 +54,9 @@
 	padding-right: 0;
  }
  
- #logo_home {
- 	height: 70px;
- 	width: 40px;
+ .logo-lab {
+ 	height: 82px;
+ 	width: 39px;
  }
 
  /* --------------------- */
@@ -77,6 +77,10 @@
  	width: 100%;
  }
 
+ #info {
+ 	margin-bottom: 30px;
+ }
+
 #consideraciones {
 	border: 2px solid #FFEBCD;
  	border-radius: 10px;
@@ -87,6 +91,10 @@
 	background-color: #FFEBCD;
  }
 
+ .footer-div {
+ 	vertical-align: middle;
+ }
+
  #initial_login {
  	margin-top: 200px;
  	background-color: rgba(245,222,179,0.6);
@@ -94,6 +102,56 @@
  	padding: 15px;
  	color: black;
  }
+
+.carousel-indicators .active {
+	background-color: black;
+}
+.carousel-indicators{
+	position: absolute;
+	top: 15px;
+	left: 190px;
+	z-index: 5;
+	margin: 0;
+	list-style: none;
+}
+
+.carousel-indicators li {
+	background-color: gray;
+}
+
+.carousel-control { 
+	position: absolute;
+	top: 40%;
+	left: 15px;
+	width: 40px;
+	height: 45px;
+	margin-top: -20px;
+	font-size: 60px;
+	font-weight: 100;
+	line-height: 30px;
+	color: #ffffff;
+	text-align: center;
+	z-index: 6;
+	background: rgba(0, 0, 0, 0.75);
+	border: 3px solid #ffffff;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	margin-right: 15px;
+}
+
+.carousel-inner {
+	height: 100%;
+}
+
+.carousel-caption {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 15px;
+	background: rgba(0, 0, 0, 0.75);
+}
 
 .instruction {
  	border: 2px solid #FFEBCD;
@@ -104,6 +162,7 @@
  }
 
  #instructions:last-child {
+ 	margin-top: 30px;
  	margin-bottom: 30px;
  }
 
