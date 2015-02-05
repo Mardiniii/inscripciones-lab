@@ -19,18 +19,19 @@
  	margin: 0;
  	border: none;
  	border-radius: 0;
- 	background-color: transparent;
+ 	background-color: white;
  }
 
 .navbar-default .navbar-brand {
-	color: black;
 	font-size: 40px;
-	height: 80px;
-	width: 50px;
-	padding: 0;
 	-webkit-transition: all .3s;
 	-moz-transition: all .3s;
 	transition: all .3s;
+	color: orange;
+ }
+
+ .navbar-default .navbar-brand:hover {
+	color: orange;
  }
  
 .navbar-default .navbar-nav > li > a {
@@ -44,10 +45,6 @@
 	padding-right: 0;
 	margin-left: 10px;
 	margin-right: 10px;
- }
-
-.navbar-default .navbar-brand:hover {
-	color: white;
  }
  
 .navbar-default .navbar-nav > li > a:hover {
@@ -80,11 +77,13 @@
  	width: 100%;
  }
 
- #info, #contact {
- 	height: 50vh;
- }
+#consideraciones {
+	border: 2px solid #FFEBCD;
+ 	border-radius: 10px;
+ 	margin-top: 30px;
+}
 
- #contact {
+ #contact, footer {
 	background-color: #FFEBCD;
  }
 
@@ -94,6 +93,23 @@
  	border-radius: 12px;
  	padding: 15px;
  	color: black;
+ }
+
+.instruction {
+ 	border: 2px solid #FFEBCD;
+ 	border-radius: 10px;
+ 	margin-left: 60px;
+ 	margin-top: 30px;
+ 	height: 100%;
+ }
+
+ #instructions:last-child {
+ 	margin-bottom: 30px;
+ }
+
+ footer {
+ 	padding-top: 15px;
+ 	padding-bottom: 15px;
  }
 
 /* --------------------- */

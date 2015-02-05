@@ -18,7 +18,7 @@
 									<%= link_to "Ver", @inscriptions.find_by_tournament_id(tournament.id) , class: "btn btn-primary" %>
 								</td>
 							<% else %>
-								<td class="text-center vert-align"><strong>CERRADA</strong></td>
+								<td class="text-center vert-align"><strong>ABIERTA</strong></td>
 								<td class="text-center vert-align">
 									<%= link_to "Ver", @inscriptions.find_by_tournament_id(tournament.id) , class: "btn btn-primary" %>
 									<%= link_to "Editar", edit_inscription_path(@inscriptions.find_by_tournament_id(tournament.id), :tournament_id => "#{tournament.id}", :club_id=> "#{current_user.club.id}"), class: "btn btn-warning" if current_user.user? %> 
