@@ -61,11 +61,10 @@ class AdminController < ApplicationController
     end
   end
 
-  def coaches
+  def coaches    
     if params[:tournament_id].present?
-      @registers = Register.all.coach
+      @registers = Register.where("register_type_id = '1'")
     end
-    ## Falta segmentarlos por torneo los entrenadores
   end
 
   def mosaico

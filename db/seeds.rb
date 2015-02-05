@@ -8,7 +8,6 @@
 
 categories = Categorie.create([{ name: 'Mini Baloncesto'}, { name: 'Pasarela'}, { name: 'Infantil'}, {name: 'Junior'}, { name: 'Juvenil'}, { name: 'Ascenso'}, {name: 'Primera'}, {name: 'Recreativo A'}, { name: 'Recreativo B'}, { name: 'Copa Antioquia Sub 15 - Menores'}, {name: 'Copa Antioquia Sub 17 - Menores'}, {name: 'Copa Elite'}, {name: 'Copa LAB Universitaria'}, {name: 'Clasificatorio Pony Baloncesto'} ])
 register_types = RegisterType.create( [ { name: 'Entrenador' } , { name: 'Jugador '} , { name: 'Asistente #1' } , { name: 'Asistente #2' } , { name: 'Asistente #3' } , { name: 'Delegado' } ] )
-
 tournaments = Tournament.create( [ {
 		categorie_id: '29',
 		name: 'Torneo Minibaloncesto Masculino',

@@ -144,6 +144,10 @@
 	height: 100%;
 }
 
+.item>img {
+	width: 100%
+}
+
 .carousel-caption {
 	position: absolute;
 	right: 0;
@@ -169,6 +173,11 @@
  footer {
  	padding-top: 15px;
  	padding-bottom: 15px;
+ }
+
+ .footer-col {
+ 	margin-top: 20px;
+ 	margin-bottom: 20px;
  }
 
 /* --------------------- */
@@ -219,5 +228,9 @@
 #analitics {
 	margin-bottom: 25px;
 }
+/*---------------------------*/
+
+/*--------MEDIA QUERIES------*/
+
 /*---------------------------*/
 

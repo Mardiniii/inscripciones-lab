@@ -11,7 +11,7 @@
 #
 
 class Field < ActiveRecord::Base
-	enum field_type: [:Cemento,:Maderame]
+	enum field_type: [:Coliseo_Madera,:Coliseo_Baldosa,:Coliseo_Concreto,:Coliseo_Asfalto,:Coliseo_Sintética,:Placa_Baldosa,:Placa_Concreto,:Placa_Asfalto,:Placa_Sintética]
   belongs_to :club
   has_many :field_hours, dependent: :destroy
   accepts_nested_attributes_for :field_hours, :reject_if => :all_blank, allow_destroy: true
