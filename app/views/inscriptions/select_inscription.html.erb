@@ -4,6 +4,7 @@
 			<tr>
 				<th class="text-center">TORNEO</th>
 				<th class="text-center">ESTADO DEL CLUB</th>
+				<th class="text-center">FECHA LIMITE INSCRIPCION(AA-MM-DD)</th>
 				<th class="text-center">ESTADO DE INSCRIPCIÓN</th>	
 				<th class="text-center">OPCIONES</th>			
 			</tr>
@@ -12,6 +13,7 @@
 					<tr class="success">
 						<td class="text-center vert-align"><%= tournament.name %></td>
 						<td class="text-center vert-align"><strong>INSCRITO</strong></td>
+						<td class="text-center vert-align"><strong><%= tournament.deadline %></strong></td>
 							<% if tournament.expired? %>
 								<td class="text-center vert-align"><strong>CERRADA</strong></td>
 								<td class="text-center vert-align">
@@ -32,6 +34,7 @@
 						<tr class="danger">
 							<td class="text-center vert-align"><%= tournament.name %></td>
 							<td class="text-center vert-align"><strong>NO INSCRITO</strong></td>
+							<td class="text-center vert-align"><strong><%= tournament.deadline %></strong></td>
 							<td class="text-center vert-align"><strong>CERRADA</strong></td>
 							<td class="text-center vert-align"><strong>NO HAY OPCIONES</strong></td>
 						</tr>
@@ -39,6 +42,7 @@
 						<tr class="danger">
 							<td class="text-center vert-align"><%= link_to "#{tournament.name}", inscription_welcome_path(:tournament_id => "#{tournament.id}", :club_id=> "#{current_user.club.id}" ) if current_user.user? %><%= link_to "#{tournament.name}", inscription_welcome_path(:tournament_id => "#{tournament.id}", :club_id=> @club_id ) if current_user.admin? %></td>
 							<td class="text-center vert-align"><strong>NO INSCRITO</strong></td>
+							<td class="text-center vert-align"><strong><%= tournament.deadline %></strong></td>
 							<td class="text-center vert-align"><strong>ABIERTA</strong></td>
 							<td class="text-center vert-align">
 								<%= link_to "Realizar Inscripción", inscription_welcome_path(:tournament_id => "#{tournament.id}", :club_id=> "#{current_user.club.id}" ), class: "btn btn-success" if current_user.user? %>

@@ -4,7 +4,8 @@
 			<h1 class="text-center">INSCRIPCIÓN DE <%= @club.name.upcase %> A <%= @tournament.name.upcase %></h1>
 			<h4> <%= @tournament.description %> </h4>
 			<h5>Fecha de inicio: <%= @tournament.start_date %></h5>
-			<h5>Fecha de cierra: <%= @tournament.end_date %></h5>
+			<h5>Fecha de cierre: <%= @tournament.end_date %></h5>
+			<h5>Fecha limite de inscripción(AA-MM-DD): <%= @tournament.deadline %></h5>
 			<div class="text-center">
 				<%= link_to "Realizar Inscripción", new_inscription_path(:tournament_id => "#{@tournament.id}", :club_id=> @club.id ), class: "btn btn-lg btn-default" %>
 			</div>
