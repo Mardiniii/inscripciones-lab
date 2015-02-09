@@ -1,5 +1,5 @@
-<div class="col-xs-12">
-	<fieldset class="form-group">
+<fieldset class="form-group register">
+	<div class="col-xs-12">
 		<div class="player">
 			<div class="form-group">
 				<%= register.label :primer_nombre %>
@@ -23,7 +23,7 @@
 			</div>
 			<div class="form-group">
 				<%= register.label :tipo_de_inscripción %>
-				<%= register.collection_select :register_type_id, RegisterType.all, :id, :name, {prompt: 'Seleccione un tipo'} %>
+				<%= register.collection_select :register_type_id, RegisterType.all, :id, :name, {prompt: 'Seleccione un tipo'}, class: "type-register" %>
 				<%= register.label :fecha_de_nacimiento %>
 				<%= register.date_select :date_of_birth, { order: [:day, :month, :year], start_year: 1940, include_blank: true } %>
 				<%= register.label :Eps %>
@@ -36,5 +36,5 @@
 				<%= link_to "Borrar Participante", "#", class: "remove_field btn btn-danger" %>
 			</div>
 		</div>
-	</fieldset>
-</div>
+	</div>
+</fieldset>

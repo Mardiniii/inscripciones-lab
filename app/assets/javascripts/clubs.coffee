@@ -7,11 +7,17 @@ $(document).on "ready page:load", ->
     event.preventDefault()
     console.log('click remove')
     $(this).prev('input[type=hidden]').val('true')
-    $(this).closest('fieldset').hide()
-    $(this).closest('fieldset').hide()
+    $(this).closest('fieldset').remove()
+    $(this).closest('fieldset').remove()
 
   $('form').on 'click', '.Add_field', (event) ->
     event.preventDefault()
-    time = new Date().getTime()
-    regexp = new RegExp($(this).data('id'), 'g')
-    $(this).before($(this).data('fields').replace(regexp, time))
+    register_count = $('div.new_register fieldset.register').length
+    if register_count < 25
+      console.log 'Se puede'
+      time = new Date().getTime()
+      regexp = new RegExp($(this).data('id'), 'g')
+      $(this).before($(this).data('fields').replace(regexp, time))
+    else
+      console.log 'No se puede'
+      alert '' + register_count + ' Registros agregados. Ha llegado al numero máximo de registros para realizar esta inscripción'
