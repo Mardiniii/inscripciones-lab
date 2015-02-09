@@ -2,14 +2,14 @@
 	<div class="col-xs-12">
 		<div class="player">
 			<div class="form-group">
-				<%= register.label :primer_nombre %>
-				<%= register.text_field :first_name %>
+				<%= register.label :primer_nombre  %>
+				<%= register.text_field :first_name, required: true %>
 				<%= register.label :segundo_nombre %>
-				<%= register.text_field :second_name %>
+				<%= register.text_field :second_name, required: true %>
 				<%= register.label :primer_apellido %>
-				<%= register.text_field :first_last_name %>
+				<%= register.text_field :first_last_name, required: true %>
 				<%= register.label :segundo_apellido %>
-				<%= register.text_field :second_last_name %>
+				<%= register.text_field :second_last_name, required: true %>
 			</div>
 			<div>
 				<div class="inline-register">
@@ -18,12 +18,12 @@
 				</div>
 				<div class="inline-register">
 				 	<%= register.label :documento_de_identidad %>
-					<%= register.text_field :identification %>
+					<%= register.text_field :identification, required: true %>
 				</div>
 			</div>
 			<div class="form-group">
 				<%= register.label :tipo_de_inscripción %>
-				<%= register.collection_select :register_type_id, RegisterType.all, :id, :name, {prompt: 'Seleccione un tipo'}, class: "type-register" %>
+				<%= register.collection_select :register_type_id, RegisterType.all, :id, :name, {prompt: 'Seleccione un tipo'}, class: "type-register", required: true %>
 				<%= register.label :fecha_de_nacimiento %>
 				<%= register.date_select :date_of_birth, { order: [:day, :month, :year], start_year: 1940, include_blank: true } %>
 				<%= register.label :Eps %>

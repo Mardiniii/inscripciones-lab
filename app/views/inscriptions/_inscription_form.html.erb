@@ -1,4 +1,4 @@
-<%= form_for(@inscription) do |inscription| %>
+<%= form_for(@inscription, :html => { :id => "inscriptionForm"}) do |inscription| %>
 	<%= inscription.hidden_field :club_id, value: params[:club_id] %>
 	<%= inscription.hidden_field :tournament_id, value: params[:tournament_id] %>
 	<%= inscription.fields_for :registers do |r| %>
@@ -9,3 +9,7 @@
 	  <%= inscription.submit "Finalizar Inscripción", :class => 'btn btn-lg btn-success' %>
 	</div>
 <% end %>
+
+<script>
+	$("#inscriptionForm").validate();
+</script>
