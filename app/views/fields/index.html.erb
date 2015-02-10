@@ -1,21 +1,31 @@
 <div class="container-fluid">
 	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1">
+			<div class="instruction-info">
+		  	<h2 class="instruction-title">Porfavor lea detenidamente las siguientes instrucciones antes de proceder con el registro de las canchas de su club.</h2>
+				<ul class="instruction-list text-justify">
+					<li>Para la Liga Antioqueña de Baloncesto es muy importante contar con la información de las canchas disponibles que su club o equipo poseen.</li>
+					<li>Para agregar una nueva cancha haga click en el botón verde "Agregar Cancha".</li>
+					<li>Una vez agregada una cancha puede verla, editarla o eliminarla desde los botones ubicados en la columna opciones.</li>
+				</ul>
+			</div>
+		</div>
 		<table class="table table-hover">
 			<tr class="info">
 				<th class="text-center">Tipo</th>
 				<th class="text-center">Direccion</th>
-				<th class="text-center">Editar</th>			
+				<th class="text-center">Opciones</th>			
 			</tr>
 			<% @fields.each do |field| %>
 				<tr class="text-center">
-					<td><%= field.field_type.humanize %></td>
-					<td><%= field.address %></td>
-					<td><%= link_to "Ver", field, class: "btn btn-xs btn-info" %> <%= link_to "Editar", edit_field_path(field), class: "btn btn-xs btn-warning" %> <%= link_to field_path(field), method: :delete, data: { confirm: '¿Esta seguro que desea elminar esta cancha?' }, class: "btn btn-xs btn-danger" do %><span>Eliminar</span><% end %></td>
+					<td class="vert-align"><%= field.field_type.humanize %></td>
+					<td class="vert-align"><%= field.address %></td>
+					<td class="vert-align"><%= link_to "Ver", field, class: "btn btn-primary" %> <%= link_to "Editar", edit_field_path(field), class: "btn btn-warning" %> <%= link_to field_path(field), method: :delete, data: { confirm: '¿Esta seguro que desea elminar esta cancha?' }, class: "btn btn-danger" do %><span>Eliminar</span><% end %></td>
 				</tr>
 			<% end%>
 		</table>
 	</div>
 	<div class="row text-center">
-		<%= link_to 'Agregar Cancha', new_field_path, class: "btn btn-success" %>
+		<%= link_to 'Agregar Cancha', new_field_path, class: "btn btn-lg btn-success" %>
 	</div>
 </div>

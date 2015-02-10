@@ -1,12 +1,11 @@
-
 <fieldset class="form-group">
 	<div class="form-group">
 		<%= hour.label :dia %>
-		<%= hour.collection_select :day_id, Day.all, :id, :name, {prompt: 'Seleccione Dia'} %>
+		<%= hour.collection_select :day_id, Day.all, :id, :name, {prompt: 'Seleccione Dia'}, required: true %>
 		<%= hour.label :hora_apertura %>
-		<%= hour.time_select :open_hour, {ampm: true, minute_step: 15, :default => {:hour => '06', :minute => '00'} } %>
+		<%= hour.time_select :open_hour, {ampm: true, minute_step: 15, :default => {:hour => '06', :minute => '00'} }, required: true %>
 		<%= hour.label :hora_cierre %>
-		<%= hour.time_select :closing_time, {ampm: true, minute_step: 15, :default => {:hour => '18', :minute => '00'} } %>		
+		<%= hour.time_select :closing_time, {ampm: true, minute_step: 15, :default => {:hour => '18', :minute => '00'} }, required: true %>		
 		<%= hour.hidden_field :_destroy %>
 		<%= link_to "Borrar Horario", "#", class: "remove_field btn btn-xs btn-danger" %>
 	</div>
