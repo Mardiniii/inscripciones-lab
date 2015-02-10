@@ -30,13 +30,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_one :club
   after_initialize :set_default_role, :if => :new_record?
-  after_create :send_email
+  # after_create :send_email
 
   def set_default_role
     self.role ||= :user
   end
 
-  def send_email
-  	UserMailer.welcome_email(self).deliver_now
-  end
+  # def send_email
+  # 	UserMailer.welcome_email(self).deliver_now
+  # end
 end

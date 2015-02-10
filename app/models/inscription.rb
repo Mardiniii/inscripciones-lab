@@ -13,11 +13,11 @@ class Inscription < ActiveRecord::Base
   belongs_to :tournament
   belongs_to :club
   has_many :registers, dependent: :destroy
-  after_create :send_email
   accepts_nested_attributes_for :registers, :limit => 25, :reject_if => :all_blank, allow_destroy: true
   validates_associated :registers
+  # after_create :send_email
 
-  def send_email
-  	UserMailer.new_inscription_email(self).deliver_now
-  end
+  # def send_email
+  # 	UserMailer.new_inscription_email(self).deliver_now
+  # end
 end
