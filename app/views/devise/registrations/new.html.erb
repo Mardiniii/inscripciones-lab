@@ -2,7 +2,8 @@
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3 new_register">
       <h3 class="text-center">Registre una cuenta para gestionar todas las inscripciones de su club</h3>
-      <p class="text-center">Esta cuenta sera la encargada de gestionar toda la información de su club, conserve muy bien el email y la contraseña, estos seran datos necesarios para iniciar sesión. Al finalizar este registro inmediatamente la plataforma lo dirigira a realizar la inscripción de su club o equipo. TODOS LOS CAMPOS SON OBLIGATORIOS</p>
+      <p class="text-center text-justify"><strong>Antes de iniciar con el proceso porfavor verifique que su conexión a internet sea estable,</strong> el sitio esta diseñado para responder ante cualquier navegador, pero es recomendable el uso de Google Chrome, ante cualquier inconsistencia con la plataforma comuniquese directamente con la Liga Antioqueña de Baloncesto, atenderemos su problema en la mayor brevedad posible.</p>
+      <p class="text-justify">Esta cuenta sera la encargada de gestionar toda la información de su club, conserve muy bien el email y la contraseña, estos seran datos necesarios para iniciar sesión. Al finalizar este registro inmediatamente la plataforma lo dirigira a realizar la inscripción de su club o equipo. <strong>TODOS LOS CAMPOS SON OBLIGATORIOS.</strong></p>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :id => "newUserForm"}) do |f| %>
         <%= devise_error_messages! %>
