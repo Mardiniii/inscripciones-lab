@@ -90,7 +90,7 @@
  }
 
  #initial_login {
- 	margin-top: 200px;
+ 	margin-top: 150px;
  	background-color: rgba(245,222,179,0.6);
  	border-radius: 12px;
  	padding: 15px;
@@ -192,6 +192,11 @@
 	padding-bottom: 10px;
 }
 
+img.logo {
+	margin-top: 150px;
+	max-width: 100%;
+	height: auto;
+}
 /* --------------------- */
 /*----- New Registration View ------ */
 
@@ -269,7 +274,6 @@ div.instruction-info {
 
 .instruction-list {
 	color: black;
-	font-size: 
 }
 .instruction-welcome {
 	color: black;

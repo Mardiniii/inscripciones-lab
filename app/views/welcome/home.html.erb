@@ -1,27 +1,30 @@
 <header>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12 col-sm-6 col-md-6">				
-		        <% if user_signed_in? && current_user.user? && current_user.club %>
-		        	<div class="content" id="initial_login">		        	
-			        	<h3>Para realizar una nueva inscripción o ver tus inscripciones actuales, click aqui: </h3>
-			        	<%= link_to 'INSCRIPCIONES', inscription_index_path, class: "btn btn-lg btn-success" %>
-			        </div>
-			       <% elsif user_signed_in? && current_user.user? && !current_user.club %>
-			       	<div class="content" id="initial_login">		        	
-			        	<h3>Porfavor crea tu club en el siguiente enlace: </h3>
-			        	<%= link_to 'Crea Tu Club', new_club_path, class: "btn btn-lg btn-success" %>
-			        </div>
-		        <% elsif user_signed_in? && current_user.admin? %>
-		        	<div class="content" id="initial_login">		        	
-			        	<h3>Bienvenido Administrador, para buscar un registro en la base de datos, click aqui: </h3>
-			        	<%= link_to 'Buscar Registro', search_register_path, class: "btn btn-lg btn-success" %>
-			        </div>	
-			       <% else %>
-			       		<div class="content" id="initial_login">
-			       			<%= render "devise/sessions/new" %>
-			       		</div>
-		        <% end %>					
+			<div class="col-xs-6 col-sm-6 col-md-6">				
+        <% if user_signed_in? && current_user.user? && current_user.club %>
+        	<div class="content" id="initial_login">		        	
+	        	<h3>Para realizar una nueva inscripción o ver tus inscripciones actuales, click aqui: </h3>
+	        	<%= link_to 'INSCRIPCIONES', inscription_index_path, class: "btn btn-lg btn-success" %>
+	        </div>
+	       <% elsif user_signed_in? && current_user.user? && !current_user.club %>
+	       	<div class="content" id="initial_login">		        	
+	        	<h3>Porfavor crea tu club en el siguiente enlace: </h3>
+	        	<%= link_to 'Crea Tu Club', new_club_path, class: "btn btn-lg btn-success" %>
+	        </div>
+        <% elsif user_signed_in? && current_user.admin? %>
+        	<div class="content" id="initial_login">		        	
+	        	<h3>Bienvenido Administrador, para buscar un registro en la base de datos, click aqui: </h3>
+	        	<%= link_to 'Buscar Registro', search_register_path, class: "btn btn-lg btn-success" %>
+	        </div>	
+	       <% else %>
+	       		<div class="content" id="initial_login">
+	       			<%= render "devise/sessions/new" %>
+	       		</div>
+        <% end %>					
+			</div>
+			<div class="col-md-3 text-right">
+				<img class="logo img-responsive" src="http://i592.photobucket.com/albums/tt5/Mardini03/Logo-LAB.png" alt="logo-lab">
 			</div>
 		</div>
 	</div>	
