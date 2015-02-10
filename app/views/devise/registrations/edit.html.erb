@@ -16,12 +16,12 @@
         </div>
 
         <div class="field form-group">
-          <%= f.label :numero_identificacion %><br />
+          <%= f.label :numero_identificacion %><p class="formulario">:  (Solo ingrese números sin espacios)</p>
           <%= f.text_field :identification_number, :class => "form-control" %>
         </div>
 
         <div class="field form-group">
-          <%= f.label :celular_solo_ingresa_numeros %>
+          <%= f.label :celular %><p class="formulario">:  (Solo ingrese números sin espacios)</p>
           <%= f.text_field :cellphone, :class => 'form-control' %>
         </div>
 
@@ -35,7 +35,7 @@
         <% end %>
 
         <div class="field form-group">
-          <%= f.label :nueva_contraseña %> <i>(leave blank if you don't want to change it)</i><br />
+          <%= f.label :nueva_contraseña %> <i>(deje este campo en blanco si no quiere cambiarla)</i><br />
           <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
         </div>
 
