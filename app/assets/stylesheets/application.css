@@ -201,6 +201,10 @@
 	margin-bottom: 18px; 
 }
 
+p.instruction-title {
+	margin-top: 15px;	
+}
+
 /* --------------------- */
 
 /*-------Inscription View --------*/
@@ -214,6 +218,12 @@
 	background-color: rgb(255,248,220);
 	border-radius: 12px;
 }
+label.error { 
+   float: none; color: red; 
+   padding-left: .5em;
+   vertical-align: top; 
+   display: block;
+}​
 /*-------------------------------*/
 /*-----Table format -------------*/
 .table tbody>tr>td.vert-align{
@@ -231,6 +241,28 @@
 /*---------------------------*/
 
 /*--------FORMULARIOS--------*/
+
+div.instruction-info {
+	border: 2px black solid;
+	border-radius: 12px;
+	margin-top: 25px;
+	padding-left: 10px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 30px;
+}
+.instruction-title {
+	color: red;
+	text-align: center;
+}
+
+.instruction-list {
+	color: black;
+	font-size: 
+}
+.instruction-welcome {
+	color: black;
+}
 
 p.formulario {
 	display: inline-block;

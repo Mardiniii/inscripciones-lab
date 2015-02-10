@@ -6,10 +6,23 @@
 	<% end %>
 	<%= link_to_add_registers "Agregar participante", inscription, :registers %>
 	<div class="actions form-group text-center">
-	  <%= inscription.submit "Finalizar Inscripción", :class => 'btn btn-lg btn-success' %>
+		<%= link_to "Cancelar Inscripción", inscription_index_path, class: "btn btn-lg btn-danger" %>
+		<%= inscription.submit "Guardar Inscripción", :class => 'btn btn-lg btn-success' %>
 	</div>
 <% end %>
 
 <script>
-	$("#inscriptionForm").validate();
+$(document).on("page:change", function() {
+	$("#inscriptionForm").validate({
+		errorPlacement: function(label, element) {
+      label.addClass('inscription-error');
+      label.insertAfter(element);
+	  },
+	  wrapper: 'span'
+		});
+
+	jQuery.extend(jQuery.validator.messages, {
+	    required: "X"
+	});
+});
 </script>

@@ -2,10 +2,30 @@
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1 new_register">
 			<h1 class="text-center">INSCRIPCIÓN DE <%= @club.name.upcase %> A <%= @tournament.name.upcase %></h1>
-			<h4> <%= @tournament.description %> </h4>
-			<h5>Fecha de inicio: <%= @tournament.start_date %></h5>
-			<h5>Fecha de cierre: <%= @tournament.end_date %></h5>
-			<h5>Fecha limite de inscripción(AA-MM-DD): <%= @tournament.deadline %></h5>
+				<p><strong>Descripción del torneo: </strong><%= @tournament.description %></p>
+				<div class="instruction-info">
+				<p class="instruction-title"><strong>IMPORTANTE: </strong>Al hacer click en realizar inscripción tenga en cuenta las siguientes recomendaciones:</p>
+				<ul class="instruction-list text-justify">
+					<li>La inscripción solo se puede realizar hasta la fecha limite definida para cada torneo.</li>
+					<li>Una vez concluida la fecha limite, la inscripciones estara cerradas, cualquier duda o inquietud debe ser consultada directamente con la Liga Antioqueña de Baloncesto.</li>
+					<li>Para cada registro los datos como primer nombre, primer apellido, fotografía, documento de identidad, tipo de inscripción, fecha de nacimiento, EPS, y correo electrónico son de caracter OBLIGATORIO para cada participante sea jugador, entrenador, asistente o delegado.</li>
+					<li>Se recomienda tener todos los datos a la mano a la hora de realizar la inscripción, las fotografías deben ser tipo documento en fondo blanco, estas seran usadas para imprimir los carnets de cada equipo.</li>
+				</ul>
+			</div>
+			<table class="table">
+				<tr>
+					<th class="text-center">Categoria</th>
+					<th class="text-center">Fecha de Inicio</th>
+					<th class="text-center">Fecha de Cierre</th>
+					<th class="text-center">Fecha limite de inscripción</th>
+				</tr>
+				<tr class="text-center">
+					<td><%= @tournament.categorie.name %></td>
+					<td><%= @tournament.start_date %></td>
+					<td><%= @tournament.end_date %></td>
+					<td><%= @tournament.end_date %></td>
+				</tr>				
+			</table>
 			<div class="text-center">
 				<%= link_to "Realizar Inscripción", new_inscription_path(:tournament_id => "#{@tournament.id}", :club_id=> @club.id ), class: "btn btn-lg btn-default" %>
 			</div>
