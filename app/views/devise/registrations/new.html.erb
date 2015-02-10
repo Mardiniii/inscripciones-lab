@@ -4,32 +4,32 @@
       <h3 class="text-center">Registre una cuenta para gestionar todas las inscripciones de su club</h3>
       <p class="text-center">Esta cuenta sera la encargada de gestionar toda la información de su club, conserve muy bien el email y la contraseña, estos seran datos necesarios para iniciar sesión. Al finalizar este registro inmediatamente la plataforma lo dirigira a realizar la inscripción de su club o equipo. TODOS LOS CAMPOS SON OBLIGATORIOS</p>
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :id => "newUserForm"}) do |f| %>
         <%= devise_error_messages! %>
 
         <div class="field form-group">
           <%= f.label :nombre %><br />
-          <%= f.text_field :name, :class => "form-control" %>
+          <%= f.text_field :name, :class => "form-control", required: true %>
         </div>
 
         <div class="field form-group">
           <%= f.label :apellidos %><br />
-          <%= f.text_field :last_name, :class => "form-control" %>
+          <%= f.text_field :last_name, :class => "form-control", required: true %>
         </div>
 
         <div class="field form-group">
           <%= f.label :numero_de_identificación %><p class="formulario">:  (Solo ingrese números sin espacios)</p>
-          <%= f.text_field :identification_number, :class => "form-control" %>
+          <%= f.text_field :identification_number, :class => "form-control", required: true %>
         </div>
 
         <div class="field form-group">
           <%= f.label :celular %><p class="formulario">:  (Solo ingrese números sin espacios)</p>
-          <%= f.text_field :cellphone, :class => 'form-control' %>
+          <%= f.text_field :cellphone, :class => 'form-control', required: true %>
         </div>
 
         <div class="field form-group">
           <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, :class => 'form-control' %>
+          <%= f.email_field :email, autofocus: true, :class => 'form-control', required: true %>
         </div>
 
         <div class="field form-group">
@@ -37,12 +37,12 @@
           <% if @validatable %>
             <p class="formulario">(Mínimo <%= @minimum_password_length %> caracteres)</p>
           <% end %><br />
-          <%= f.password_field :password, autocomplete: "off", :class => 'form-control' %>
+          <%= f.password_field :password, autocomplete: "off", :class => 'form-control', required: true %>
         </div>
 
         <div class="field form-group">
           <%= f.label :confirmar_contraseña %><p class="formulario">:  (Mínimo <%= @minimum_password_length %> caracteres)</p>
-          <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control' %>
+          <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control', required: true %>
         </div>
 
         <div class="actions form-group text-center">
@@ -55,7 +55,18 @@
   </div>
 </div>
 
+<script>
+$(document).on("page:change", function() {
+  $("#newUserForm").validate({
+    errorPlacement: function(label, element) {
+      label.addClass('inscription-error');
+      label.insertAfter(element);
+    },
+    wrapper: 'span'
+    });
 
-
-
-
+  jQuery.extend(jQuery.validator.messages, {
+      required: "Este campo es obligatorio"
+  });
+});
+</script>

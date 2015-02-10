@@ -201,13 +201,13 @@
 	margin-bottom: 18px; 
 }
 
+/* --------------------- */
+
+/*-------Inscription View --------*/
 p.instruction-title {
 	margin-top: 15px;	
 }
 
-/* --------------------- */
-
-/*-------Inscription View --------*/
 .player {
 	margin-top: 5px;
 	margin-bottom: 5px;
@@ -219,7 +219,8 @@ p.instruction-title {
 	border-radius: 12px;
 }
 label.error { 
-   float: none; color: red; 
+   float: none; 
+   color: red; 
    padding-left: .5em;
    vertical-align: top; 
    display: block;
