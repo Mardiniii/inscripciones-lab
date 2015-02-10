@@ -1,14 +1,14 @@
 <div class="field form-group">
 	<%= manager.label :nombre_completo %><br />
-	<%= manager.text_field :name, :class => "form-control" %>
+	<%= manager.text_field :name, :class => "form-control", required: true %>
 </div>
 <div class="field form-group">
 	<%= manager.label :numero_de_identificación %><br />
-	<%= manager.text_field :identification, :class => "form-control" %>
+	<%= manager.text_field :identification, :class => "form-control", required: true %>
 </div>
 <div class="field form-group">
 	<%= manager.label :celular %><br />
-	<%= manager.text_field :cellphone, :class => "form-control" %>
+	<%= manager.text_field :cellphone, :class => "form-control", required: true %>
 </div>
 <div class="field form-group">
 	<%= manager.label :telefono %><br />
@@ -16,5 +16,5 @@
 </div>
 <div class="field form-group">
 	<%= manager.label :correo_electronico %><br />
-	<%= manager.text_field :email, :class => "form-control" %>
+	<%= manager.text_field :email, :class => "form-control", required: true %>
 </div>

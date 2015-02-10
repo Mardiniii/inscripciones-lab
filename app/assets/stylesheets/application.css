@@ -185,6 +185,19 @@
 #club_buttons {
 	padding-top: 60px;
 }
+
+#manager, #club, #president, #club_comments {
+	border: 2px solid black;
+	border-radius: 12px;
+	margin-left: 60px;
+	margin-bottom: 25px;
+}
+
+#club_comments {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
 /* --------------------- */
 /*----- New Registration View ------ */
 

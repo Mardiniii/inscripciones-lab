@@ -1,14 +1,14 @@
 <div class="field form-group">
 	<%= president.label :nombre_completo %><br />
-	<%= president.text_field :name, :class => "form-control" %>
+	<%= president.text_field :name, :class => "form-control", required: true %>
 </div>
 <div class="field form-group">
 	<%= president.label :numero_de_identificación %><br />
-	<%= president.text_field :identification, :class => "form-control" %>
+	<%= president.text_field :identification, :class => "form-control", required: true %>
 </div>
 <div class="field form-group">
 	<%= president.label :telefono %><br />
-	<%= president.text_field :phone, :class => "form-control" %>
+	<%= president.text_field :phone, :class => "form-control", required: true %>
 </div>
 <div class="field form-group">
 	<%= president.label :fax %><br />
@@ -16,9 +16,9 @@
 </div>
 <div class="field form-group">
 	<%= president.label :celular %><br />
-	<%= president.text_field :cellphone, :class => "form-control" %>
+	<%= president.text_field :cellphone, :class => "form-control", required: true %>
 </div>
 <div class="field form-group">
 	<%= president.label :correo_electronico %><br />
-	<%= president.text_field :email, :class => "form-control" %>
+	<%= president.text_field :email, :class => "form-control", required: true %>
 </div>

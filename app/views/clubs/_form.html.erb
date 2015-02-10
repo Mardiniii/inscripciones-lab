@@ -1,27 +1,27 @@
-<%= form_for @club do |f| %>
+<%= form_for(@club, :html => { :id => "clubForm"}) do |f| %>
 	<div class="row">
-		<div class="col-xs-6">
+		<div class="col-xs-5" id="club">
 			<h2 class="text-center">Informacion del CLUB</h2>
 			<p class="text-justify">Complete en esta sección el formulario con los campos del club</p>
 			<div class="field form-group">
 				<%= f.label :nombre %><br />
-				<%= f.text_field :name, :class => "form-control" %>
+				<%= f.text_field :name, :class => "form-control", required: true %>
 			</div>
 			<div class="field form-group">
 				<%= f.label :dirección %><br />
-				<%= f.text_field :address, :class => "form-control" %>
+				<%= f.text_field :address, :class => "form-control", required: true %>
 			</div>
 			<div class="field form-group">
 				<%= f.label :correo %><br />
-				<%= f.text_field :email, :class => "form-control" %>
+				<%= f.text_field :email, :class => "form-control", required: true %>
 			</div>
 			<div class="field form-group">
 				<%= f.label :municipio %><br />
-				<%= f.text_field :municipality, :class => "form-control" %>
+				<%= f.text_field :municipality, :class => "form-control", required: true %>
 			</div>
 			<div class="field form-group">
 				<%= f.label :telefono %><br />
-				<%= f.text_field :phone, :class => "form-control" %>
+				<%= f.text_field :phone, :class => "form-control", required: true %>
 			</div>
 			<div class="field form-group">
 				<%= f.label :celular %><br />
@@ -32,7 +32,7 @@
 			  <%= f.file_field :avatar %>
 			</div>
 		</div>
-		<div class="col-xs-6">
+		<div class="col-xs-5" id="president">
 			<h2 class="text-center">Informacion del Presidente</h2>
 			<p class="text-justify">Complete en esta sección el formulario con los campos del presidente del club</p>
 			<%= f.fields_for :president do |p|%>
@@ -41,14 +41,14 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-6">
+		<div class="col-xs-5" id="manager">
 			<h2 class="text-center">Informacion del Manager</h2>
 			<p class="text-justify">Complete en esta sección el formulario con los campos del representante encargado del club</p>
 			<%= f.fields_for :manager do |m|%>
 				<%= render 'manager_form', :manager => m %>
 			<% end %>
 		</div>
-		<div class="col-xs-6">
+		<div class="col-xs-5" id="club_comments">
 			<div class="actions form-group text-center">
 				<p class="text-justify">Una vez termine de llenar todos los campos de este formulario recibira un correo electronico con la información de su Club, esta podra ser editada en cualquier momento a travez del link ir a tu club en la parte superior derecha de la pantalla.</p>
 				<%= f.submit "Guardar Información del Club", :class => 'btn btn-lg btn-success' %>
@@ -56,3 +56,19 @@
 		</div>
 	</div>
 <% end %>
+
+<script>
+$(document).on("page:change", function() {
+	$("#clubForm").validate({
+		errorPlacement: function(label, element) {
+      label.addClass('inscription-error');
+      label.insertAfter(element);
+	  },
+	  wrapper: 'span'
+		});
+
+	jQuery.extend(jQuery.validator.messages, {
+	    required: "Este campo es obligatorio"
+	});
+});
+</script>
