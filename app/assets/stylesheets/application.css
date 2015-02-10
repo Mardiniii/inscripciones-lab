@@ -202,7 +202,10 @@
 }
 
 img.logo {
-	margin-top: 150px;
+	vertical-align: middle;
+	margin: auto;
+	padding-top: 100px;
+	margin-top: 200px;
 	max-width: 100%;
 	height: auto;
 }
