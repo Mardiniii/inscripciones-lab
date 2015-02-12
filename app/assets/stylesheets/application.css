@@ -71,6 +71,10 @@
  	width: 100%;
  }
 
+ .note {
+ 	color: red;
+ }
+
  #info {
  	margin-bottom: 30px;
  }
