@@ -29,7 +29,11 @@
 					</tr>
 					<% @inscriptions.each do |inscription| %>
 						<tr>
-							<td class="vert-align"><%= image_tag inscription.club.avatar.url(:thumb) %></td>
+							<% if inscription.club.avatar.url == "http://i592.photobucket.com/albums/tt5/Mardini03/red-not-sign-transparent-hi.png" %>
+								<td class="vert-align text-center"><%= image_tag "http://i592.photobucket.com/albums/tt5/Mardini03/red-not-sign-transparent-hi.png", class: "club-thumbnail" %></td>
+							<% else %>
+								<td class="vert-align text-center"><%= image_tag inscription.club.avatar.url(:thumb) %></td>
+							<% end %>
 							<td class="vert-align"><%= inscription.club.name %></td>
 							<td class="vert-align"><%= inscription.club.address %></td>
 							<td class="vert-align"><%= inscription.club.email %></td>
