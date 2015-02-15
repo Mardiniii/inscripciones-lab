@@ -58,8 +58,10 @@
 	<%# flash.each do |name, err|%>
     <%#= content_tag :div, err, class: name %>
   <%# end %>
-  <% flash.each do |key, value| %>
-    <div class="flash <%= key %> alert alert-danger text-center" role="alert"><%= value %></div>
+  <% if flash.any? %>
+	  <% flash.each do |key, value| %>
+	    <div class="flash <%= key %> alert alert-danger text-center" role="alert"><%= value %></div>
+	  <% end %>
   <% end %>
 
 	<%= yield %>
