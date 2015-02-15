@@ -2,7 +2,8 @@
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3 new_register">
 			<h2>Olvido su contraseña?</h2>
-			<p>Introduzca su dirección de correo electrónico para reestablecerla</p>
+			<h3 class="text-center">Introduzca su dirección de correo electrónico para reestablecerla</h3>
+			<p class="text-justify">Al ingresar la dirección de correo electrónico con la que se registro en la plataforma, recibira un mensaje en su buzon de correo electrónico para reestablecer la contraseña.</p>
 			<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
 			  <%= devise_error_messages! %>
 			  <div class="field form-group">
