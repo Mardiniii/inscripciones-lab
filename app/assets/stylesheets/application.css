@@ -272,6 +272,11 @@ table.table.table-hover tbody>tr>td.vert-align{
 	margin-bottom: 15px;
 }
 
+.club-thumbnail {
+	height: 100px;
+	width: 100px;
+}
+
 #analitics {
 	margin-bottom: 25px;
 }
