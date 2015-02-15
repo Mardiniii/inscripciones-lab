@@ -1,7 +1,11 @@
 <div class="container-fluid new_register">
 	<div class="row">
 		<div class="col-xs-4 text-center">
-			<%= image_tag @club.avatar.url(:medium) %>
+			<% if @club.avatar.url == "http://i592.photobucket.com/albums/tt5/Mardini03/red-not-sign-transparent-hi.png" %>
+				<%= image_tag "http://i592.photobucket.com/albums/tt5/Mardini03/red-not-sign-transparent-hi.png", class: "club-default-image" %>
+			<% else %>
+				<%= image_tag @club.avatar.url(:medium) %>
+			<% end %>				
 		</div>
 		<div class="col-xs-4 text-left">
 			<h2 class="text-center">CLUB</h2>

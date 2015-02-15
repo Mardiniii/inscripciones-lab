@@ -200,6 +200,11 @@
 	margin-bottom: 25px;
 }
 
+.club-default-image {
+	margin-top: 25px;
+	height: 200px;
+	width: 200px;
+}
 #club_comments {
 	padding-top: 10px;
 	padding-bottom: 10px;
