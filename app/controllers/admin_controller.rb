@@ -63,7 +63,7 @@ class AdminController < ApplicationController
 
   def coaches    
     if params[:tournament_id].present?
-      @registers = Register.joins(:inscriptions).where("register_type_id = ? and inscriptions.tournament_id = ?", 1, params[:tournament_id])
+      @registers = Register.joins(:inscription).where("register_type_id = ? and inscriptions.tournament_id = ?", 1, params[:tournament_id])
     end
   end
 

@@ -42,7 +42,7 @@
 					<% else %>
 						<td class="vert-align text-center"><%= image_tag club.avatar.url(:thumb) %></td>
 					<% end %>
-					<td class="vert-align"><%= club.name %></td>
+					<td class="vert-align text-center"><%= club.name %></td>
 					<td class="vert-align text-center"><%= club.address %></td>
 					<td class="vert-align"><%= club.email %></td>
 					<td class="vert-align text-center"><%= club.municipality %></td>
@@ -59,6 +59,7 @@
 		<table class="table table-hover">
 			<tr class="info">
 				<th class="text-center">Escudo</th>
+				<th class="text-center">Club</th>
 				<th class="text-center">Nombre</th>
 				<th class="text-center">Documento de Identidad</th>
 				<th class="text-center">Telefono</th>
@@ -74,13 +75,14 @@
 					<% else %>
 						<td class="vert-align text-center"><%= image_tag Club.find(president.club_id).avatar.url(:thumb) %></td>
 					<% end %>
+					<td class="vert-align text-center"><%= president.club.name %></td>
 					<td class="vert-align"><%= president.name %></td>
 					<td class="vert-align text-center"><%= president.identification %></td>
 					<td class="vert-align text-center"><%= president.phone %></td>
 					<td class="vert-align text-center"><%= president.fax %></td>
 					<td class="vert-align text-center"><%= president.cellphone %></td>
-					<td class="vert-align"><%= president.email %></td>
-					<td class="vert-align text-center"><%= link_to "#{Club.find(president.club_id).name}", Club.find(president.club_id), class: "btn btn-info" %></td>
+					<td class="vert-align text-center"><%= president.email %></td>
+					<td class="vert-align text-center"><%= link_to "Ver Perfil del Club", Club.find(president.club_id), class: "btn btn-info" %></td>
 				</tr>
 			<% end %>
 		</table>
@@ -91,6 +93,7 @@
 		<table class="table table-hover">
 			<tr class="info">
 				<th class="text-center">Escudo</th>
+				<th class="text-center">Club</th>
 				<th class="text-center">Nombre</th>
 				<th class="text-center">Documento de Identidad</th>
 				<th class="text-center">Telefono</th>
@@ -105,14 +108,15 @@
 					<% else %>
 						<td class="vert-align text-center"><%= image_tag Club.find(manager.club_id).avatar.url(:thumb) %></td>					
 					<% end %>
+					<td class="vert-align text-center"><%= manager.club.name %></td>
 					<td class="vert-align"><%= manager.name %></td>
 					<td class="vert-align text-center"><%= manager.identification %></td>
 					<td class="vert-align text-center"><%= manager.phone %></td>
 					<td class="vert-align text-center"><%= manager.cellphone %></td>
-					<td class="vert-align"><%= manager.email %></td>
-					<td class="vert-align text-center"><%= link_to "#{Club.find(manager.club_id).name}", Club.find(manager.club_id), class: "btn btn-info" %></td>
+					<td class="vert-align text-center"><%= manager.email %></td>
+					<td class="vert-align text-center"><%= link_to "Ver Perfil del Club", Club.find(manager.club_id), class: "btn btn-info" %></td>
 				</tr>
 			<% end %>
 		</table>
 	<% end %>
-</div>
+</	div>

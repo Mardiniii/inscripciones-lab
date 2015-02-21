@@ -42,6 +42,7 @@
 						<th class="text-center">Fecha de Nacimiento</th>
 						<th class="text-center">EPS</th>
 						<th class="text-center">Email</th>
+						<th class="text-center">Torneo</th>
 						<th class="text-center">Club</th>
 					</tr>
 					<% @registers.each do |register| %>
@@ -53,6 +54,7 @@
 							<td class="vert-align"><%= register.date_of_birth %></td>
 							<td class="vert-align"><%= register.eps %></td>
 							<td class="vert-align"><%= register.email %></td>
+							<td class="vert-align"><%= register.inscription.tournament.name %></td>
 							<td class="vert-align"><%= Club.find(Inscription.find(register.inscription_id).club_id).name %></td>
 						</tr>
 					<% end %>
