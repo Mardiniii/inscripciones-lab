@@ -22,6 +22,9 @@ class AdminController < ApplicationController
     @fields = Field.all
   end
 
+  def license_creator
+  end
+
 	def search_register
 		if params[:register_type_id].present?
       @registers = Register.where("register_type_id = ?", params[:register_type_id])
