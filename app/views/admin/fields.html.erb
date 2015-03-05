@@ -1,0 +1,28 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table table-hover">
+				<tr class="info">
+					<th class="text-center">Logo</th>
+					<th class="text-center">Club</th>
+					<th class="text-center">Tipo</th>
+					<th class="text-center">Dirección</th>
+					<th class="text-center">Opciones</th>
+				</tr>
+				<% @fields.each do |field| %>
+					<tr>
+						<% if field.club.avatar.url == "http://i592.photobucket.com/albums/tt5/Mardini03/red-not-sign-transparent-hi.png" %>
+							<td class="vert-align text-center"><%= image_tag "http://i592.photobucket.com/albums/tt5/Mardini03/red-not-sign-transparent-hi.png", class: "club-thumbnail" %></td>
+						<% else %>
+							<td class="vert-align text-center"><%= image_tag field.club.avatar.url(:thumb) %></td>
+						<% end %>
+						<td class="vert-align text-center"><%= field.club.name %></td>
+						<td class="vert-align text-center"><%= field.field_type.humanize %></td>
+						<td class="vert-align text-center"><%= field.address %></td>
+						<td class="vert-align text-center"><%= link_to 'Ver Horarios', field, class: "btn btn-info" %></td>
+					</tr>
+				<% end %>
+				</table>
+		</div>
+	</div>
+</div>
