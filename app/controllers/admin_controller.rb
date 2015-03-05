@@ -27,7 +27,9 @@ class AdminController < ApplicationController
   end
 
   def license_creator
-    @inscriptions = Inscription.all
+    inscription_id = params[:inscription_id]
+    @inscription = Inscription.find(inscription_id)
+    @registers = @inscription.registers
   end
 
 	def search_register

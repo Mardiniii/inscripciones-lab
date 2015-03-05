@@ -20,7 +20,7 @@ Mostrar todas las inscripciones
 					<td class="text-center vert-align"><%= inscription.club.name %></td>
 					<td class="text-center vert-align"><%= inscription.tournament.name %></td>
 					<td class="text-center vert-align">POR DEFINIR</td>
-					<td class="text-center vert-align"><%= link_to 'Generar Carnets', license_path, class: "btn btn-success" %></td>
+					<td class="text-center vert-align"><%= link_to 'Generar Carnets', license_path(:inscription_id => inscription.id), class: "btn btn-success" %></td>
 				</tr>
 			<% end %>
 		</table>

@@ -1,13 +1,12 @@
-<% @inscriptions.each do |team| %>
-	<p><%= link_to team.tournament.name, "#" %></p>
+<% @registers.each do |register| %>
+	<div class="carnet_lab">
+		<p class="register_type"><%= register.register_type.name %></p>
+		<p class="register_name"><%= register.first_name %> <%= register.second_name %> <%= register.first_last_name %> <%= register.second_last_name %></p>
+		<p class="register_identification">Documento Identidad: <%= register.identification %></p>
+		<%= image_tag register.avatar.url(:medium), class: "register_image" %>	
+		<p class="register_date"><%= register.date_of_birth %></p>
+	</div>
 <% end %>
-<div class="carnet_lab">
-	<p class="register_type"><%= Register.find(61).register_type.name %></p>
-	<p class="register_name"><%= Register.find(61).first_name %> <%= Register.find(61).second_name %> <%= Register.find(61).first_last_name %> <%= Register.find(61).second_last_name %></p>
-	<p class="register_identification">Documento Identidad: <%= Register.find(61).identification %></p>
-	<%= image_tag Register.find(61).avatar.url(:medium), class: "register_image" %>	
-	<p class="register_date"><%= Register.find(61).date_of_birth %></p>
-</div>
 
 
 <div class="carnet_lab1">
