@@ -1,1 +1,31 @@
 Mostrar todas las inscripciones
+
+<div class="container-fluid">
+	<div class="row">
+		<table class="table table-hover">
+			<tr>
+				<th class="text-center">ESCUDO</th>
+				<th class="text-center">NOMBRE</th>
+				<th class="text-center">TORNEO</th>
+				<th class="text-center">CARNETIZADO</th>	
+				<th class="text-center">OPCIONES</th>			
+			</tr>
+			<% @inscriptions.each do |inscription| %>
+				<tr>
+					<% if inscription.club.avatar.url == "http://i592.photobucket.com/albums/tt5/Mardini03/red-not-sign-transparent-hi.png" %>
+						<td class="vert-align text-center"><%= image_tag "http://i592.photobucket.com/albums/tt5/Mardini03/red-not-sign-transparent-hi.png", class: "club-thumbnail" %></td>
+					<% else %>
+						<td class="vert-align text-center"><%= image_tag inscription.club.avatar.url(:thumb) %></td>
+					<% end %>
+					<td class="text-center vert-align"><%= inscription.club.name %></td>
+					<td class="text-center vert-align"><%= inscription.tournament.name %></td>
+					<td class="text-center vert-align">POR DEFINIR</td>
+					<td class="text-center vert-align"><%= link_to 'Generar Carnets', license_path, class: "btn btn-success" %></td>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+</div>
+
+
+
