@@ -18,6 +18,10 @@ class AdminController < ApplicationController
     end
   end
 
+  def fields
+    @fields = Field.all
+  end
+
 	def search_register
 		if params[:register_type_id].present?
       @registers = Register.where("register_type_id = ?", params[:register_type_id])
