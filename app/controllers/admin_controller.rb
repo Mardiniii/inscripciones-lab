@@ -22,7 +22,12 @@ class AdminController < ApplicationController
     @fields = Field.all
   end
 
+  def inscriptions_index
+    @inscriptions = Inscription.all
+  end
+
   def license_creator
+    @inscriptions = Inscription.all
   end
 
 	def search_register
