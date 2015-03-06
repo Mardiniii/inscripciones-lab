@@ -7,8 +7,8 @@ $(document).on "ready page:load", ->
     event.preventDefault()
     console.log('click remove')
     $(this).prev('input[type=hidden]').val('true')
-    $(this).closest('fieldset').remove()
-    $(this).closest('fieldset').remove()
+    $(this).closest('fieldset').hide()
+    $(this).closest('fieldset').hide()
 
   $('form').on 'click', '.Add_field', (event) ->
     event.preventDefault()
