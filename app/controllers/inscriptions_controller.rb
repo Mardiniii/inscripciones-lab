@@ -26,6 +26,7 @@ class InscriptionsController < ApplicationController
 		if @inscription.save
 		  redirect_to @inscription
 		else
+			flash[:alert] = 'Se ha encontrado un error al intentar crear esta inscripción, es muy probable que el formato de sus imagenes no sea el adecuado. Solo puede usar archivos de imagen, con extensiones como JPG o PNG, otro tipos de archivos seran rechazados. Contacte a incripcioneseventoslab@gmail.com sino puede solucionarlo.'
 		  render action: :new
 		end
 	end
@@ -46,7 +47,10 @@ class InscriptionsController < ApplicationController
 	def update
 		@inscription = Inscription.find(params[:id])
 		if @inscription.update(inscription_params)
-			redirect_to @inscription			
+			redirect_to @inscription
+		else
+			flash[:alert] = 'Se ha encontrado un error al intentar editar esta inscripción, es muy probable que el formato de sus imagenes no sea el adecuado. Solo puede usar archivos de imagen, con extensiones como JPG o PNG, otro tipos de archivos seran rechazados. Contacte a incripcioneseventoslab@gmail.com sino puede solucionarlo.'
+			redirect_to :action => "edit", :tournament_id => @inscription.tournament_id, :club_id => @inscription.club.id
 		end
 	end
 

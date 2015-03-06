@@ -349,7 +349,7 @@ p.register_name {
 	position: relative;
 	top: 130px;
 	left: 50px;
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
 }
 
@@ -375,7 +375,6 @@ img.register_image {
 	position: relative;
 	top: 35px;
 	left: 360px;
-	border: 1px solid black;
 	width: 130px;
 }
 /*---------------------------*/
