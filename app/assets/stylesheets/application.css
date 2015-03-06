@@ -313,17 +313,6 @@ p.formulario {
 /*---------------------------*/
 
 /*--------LICENSE CREATOR----*/
-div.carnet_lab1 {
-	height: 50%;
-	width: 50%;
-	border: 1px solid red;
-	background: url(http://i62.tinypic.com/2a6mo1w.jpg);
-	background-repeat: no-repeat;
-	background-size: 530px 350px;
-	height: 350px;
-	width: 530px;
-}
-
 div.carnet_lab {
 	height: 50%;
 	width: 50%;
@@ -333,22 +322,24 @@ div.carnet_lab {
 	position: relative;
 	height: 350px;
 	width: 530px;
-	margin: 10px;
+	margin: 20px;
+
 }
 
 p.register_type {
 	color: white;
+	font-size: 18px;
 	font-weight: bold;
 	position: relative;
-	top: 110px;
-	left: 190px;
+	top: 108px;
+	left: 175px;
 }
 
 p.register_name {
 	font-size: 18px;
 	position: relative;
-	top: 130px;
-	left: 50px;
+	top: 140px;
+	left: 10px;
 	margin: 0 auto;
 	padding: 0;
 }
@@ -356,27 +347,30 @@ p.register_name {
 p.register_identification {
 	font-size: 18px;
 	position: relative;
-	top: 130px;
-	left: 50px;
-	margin: 0;
-	padding: 0;
-}
-
-p.register_date {
-	font-size: 18px;
-	position: relative;
-	top: 100px;
-	left: 375px;
+	top: 140px;
+	left: 10px;
 	margin: 0;
 	padding: 0;
 }
 
 img.register_image {
 	position: relative;
-	top: 35px;
-	left: 360px;
+	top: 10px;
+	left: 345px;
 	width: 130px;
+	height: 104px;
 }
+
+
+p.register_date {
+	font-size: 18px;
+	position: relative;
+	top: 100px;
+	left: 365px;
+	margin: 0;
+	padding: 0;
+}
+
 /*---------------------------*/
 
 /*--------MEDIA QUERIES------*/
