@@ -312,6 +312,67 @@ p.formulario {
 
 /*---------------------------*/
 
+/*--------LICENSE CREATOR----*/
+div.carnet_lab {
+	height: 50%;
+	width: 50%;
+	background: url(http://i592.photobucket.com/albums/tt5/Mardini03/carnet%20liga.jpg);
+	background-repeat: no-repeat;
+	background-size: 530px 350px;
+	position: relative;
+	height: 350px;
+	width: 530px;
+	margin: 20px;
+
+}
+
+p.register_type {
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	position: relative;
+	top: 108px;
+	left: 175px;
+}
+
+p.register_name {
+	font-size: 18px;
+	position: relative;
+	top: 140px;
+	left: 10px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+p.register_identification {
+	font-size: 18px;
+	position: relative;
+	top: 140px;
+	left: 10px;
+	margin: 0;
+	padding: 0;
+}
+
+img.register_image {
+	position: relative;
+	top: 10px;
+	left: 345px;
+	width: 130px;
+	height: 104px;
+}
+
+
+p.register_date {
+	font-size: 18px;
+	position: relative;
+	top: 100px;
+	left: 365px;
+	margin: 0;
+	padding: 0;
+}
+
+/*---------------------------*/
+
 /*--------MEDIA QUERIES------*/
 
 /*---------------------------*/

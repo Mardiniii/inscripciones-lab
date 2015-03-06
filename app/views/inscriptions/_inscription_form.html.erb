@@ -6,7 +6,7 @@
 	<% end %>
 	<%= link_to_add_registers "Agregar participante", inscription, :registers %>
 	<div class="actions form-group text-center">
-		<%= link_to "Cancelar Inscripción", inscription_index_path, class: "btn btn-lg btn-danger" %>
+		<%= link_to "Cancelar Inscripción", inscription_index_path(:club_id => params[:club_id]), class: "btn btn-lg btn-danger" %>
 		<%= inscription.submit "Guardar Inscripción", :class => 'btn btn-lg btn-success' %>
 	</div>
 <% end %>

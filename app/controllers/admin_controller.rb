@@ -22,6 +22,16 @@ class AdminController < ApplicationController
     @fields = Field.all
   end
 
+  def inscriptions_index
+    @inscriptions = Inscription.all
+  end
+
+  def license_creator
+    inscription_id = params[:inscription_id]
+    @inscription = Inscription.find(inscription_id)
+    @registers = @inscription.registers
+  end
+
 	def search_register
 		if params[:register_type_id].present?
       @registers = Register.where("register_type_id = ?", params[:register_type_id])

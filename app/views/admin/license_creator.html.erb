@@ -1,0 +1,13 @@
+<div class="container">
+	<div class="row">
+		<% @registers.each do |register| %>
+			<div class="carnet_lab col-md-6">
+				<p class="register_type"><%= register.register_type.name %></p>
+				<p class="register_name"><%= register.first_name %> <%= register.second_name %> <%= register.first_last_name %> <%= register.second_last_name %></p>
+				<p class="register_identification">Nro. Identificación: <%= register.identification %></p>
+				<%= image_tag register.avatar.url(:thumb), class: "register_image" %>	
+				<p class="register_date"><%= register.date_of_birth %></p>
+			</div>
+		<% end %>
+	</div>
+</div>
