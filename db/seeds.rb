@@ -9,7 +9,7 @@
 # categories = Categorie.create([{ name: 'Mini Baloncesto'}, { name: 'Pasarela'}, { name: 'Infantil'}, {name: 'Junior'}, { name: 'Juvenil'}, { name: 'Ascenso'}, {name: 'Primera'}, {name: 'Recreativo A'}, { name: 'Recreativo B'}, { name: 'Copa Antioquia Sub 15 - Menores'}, {name: 'Copa Antioquia Sub 17 - Menores'}, {name: 'Copa Elite'}, {name: 'Copa LAB Universitaria'}, {name: 'Clasificatorio Pony Baloncesto'} ])
 # register_types = RegisterType.create( [ { name: 'Entrenador' } , { name: 'Jugador '} , { name: 'Asistente #1' } , { name: 'Asistente #2' } , { name: 'Asistente #3' } , { name: 'Delegado' } ] )
 # tournaments = Tournament.create( [ {
-# 		categorie_id: '1',
+# 		category_id: '1',
 # 		name: 'Torneo Minibaloncesto Masculino',
 # 		start_date: DateTime.strptime("09/01/2015", "%m/%d/%Y"),
 # 		description: 'Descripción del torneo definida por la liga local',
@@ -17,7 +17,7 @@
 # 		deadline: Date.new(2015,02,20)
 # 	},
 # 	{
-# 		categorie_id: '1',
+# 		category_id: '1',
 # 		name: 'Torneo Minibaloncesto Femenino',
 # 		start_date: DateTime.strptime("09/01/2015", "%m/%d/%Y"),
 # 		description: 'Descripción del torneo definida por la liga local',
@@ -25,7 +25,7 @@
 # 		deadline: Date.new(2015,02,20)
 # 	},
 # 	{
-# 		categorie_id: '3',
+# 		category_id: '3',
 # 		name: 'Torneo Infantil Masculino',
 # 		start_date: DateTime.strptime("09/01/2015", "%m/%d/%Y"),
 # 		description: 'Descripción del torneo definida por la liga local',
@@ -33,7 +33,7 @@
 # 		deadline: Date.new(2015,02,20)
 # 	},
 # 	{
-# 		categorie_id: '3',
+# 		category_id: '3',
 # 		name: 'Torneo Infantil Femenino',
 # 		start_date: DateTime.strptime("09/01/2015", "%m/%d/%Y"),
 # 		description: 'Descripción del torneo definida por la liga local',
@@ -41,7 +41,7 @@
 # 		deadline: Date.new(2015,02,20)
 # 	},
 # 	{
-# 		categorie_id: '4',
+# 		category_id: '4',
 # 		name: 'Torneo Junior Masculino',
 # 		start_date: DateTime.strptime("09/01/2015", "%m/%d/%Y"),
 # 		description: 'Descripción del torneo definida por la liga local',
@@ -49,7 +49,7 @@
 # 		deadline: Date.new(2015,02,20)
 # 	},
 # 	{
-# 		categorie_id: '4',
+# 		category_id: '4',
 # 		name: 'Torneo Junior Femenino',
 # 		start_date: DateTime.strptime("09/01/2015", "%m/%d/%Y"),
 # 		description: 'Descripción del torneo definida por la liga local',
