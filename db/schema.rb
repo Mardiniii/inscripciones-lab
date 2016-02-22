@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150204212806) do
+ActiveRecord::Schema.define(version: 20160222224005) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -130,17 +130,15 @@ ActiveRecord::Schema.define(version: 20150204212806) do
   add_index "registers", ["register_type_id"], name: "index_registers_on_register_type_id"
 
   create_table "tournaments", force: :cascade do |t|
-    t.integer  "categorie_id"
     t.date     "start_date"
     t.date     "end_date"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "name"
     t.text     "description"
     t.date     "deadline"
+    t.integer  "category_id"
   end
-
-  add_index "tournaments", ["categorie_id"], name: "index_tournaments_on_categorie_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

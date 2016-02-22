@@ -20,11 +20,11 @@
 					<th class="text-center">Fecha limite de inscripción</th>
 				</tr>
 				<tr class="text-center">
-					<td><%= @tournament.categorie.name %></td>
+					<td><%= @tournament.category.name %></td>
 					<td><%= @tournament.start_date %></td>
 					<td><%= @tournament.end_date %></td>
 					<td><%= @tournament.end_date %></td>
-				</tr>				
+				</tr>
 			</table>
 			<div class="text-center">
 				<%= link_to "Realizar Inscripción", new_inscription_path(:tournament_id => "#{@tournament.id}", :club_id=> @club.id ), class: "btn btn-lg btn-default" %>
