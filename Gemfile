@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.1.5'
 
 gem 'rails', '4.2.0'
 gem 'devise'
@@ -15,6 +14,7 @@ gem 'annotate', '~> 2.6.5'
 gem 'hirb'
 gem "paperclip", :git => "http://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk-v1'
+gem 'puma'
 
 group :development, :test do
 	gem 'sqlite3'
