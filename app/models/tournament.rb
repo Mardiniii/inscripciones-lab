@@ -15,10 +15,10 @@
 #
 
 class Tournament < ActiveRecord::Base
-  belongs_to :categorie
+  belongs_to :category
   has_many :inscriptions, dependent: :destroy
 
   def expired?
-  	Date.current > deadline 
+  	Date.current > deadline
   end
 end
