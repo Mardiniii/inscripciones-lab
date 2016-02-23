@@ -13,7 +13,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'annotate', '~> 2.6.5'
 gem 'hirb'
 gem "paperclip", :git => "http://github.com/thoughtbot/paperclip.git"
-gem 'aws-sdk-v1'
+gem 'aws-sdk', '~> 2'
 gem 'puma'
 
 group :development, :test do
