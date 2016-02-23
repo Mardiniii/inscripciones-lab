@@ -3,7 +3,7 @@ class AdminController < ApplicationController
 	before_filter :admin_only
 
 	def home
-		
+
 	end
 
   def manage_directors
@@ -75,7 +75,7 @@ class AdminController < ApplicationController
     end
   end
 
-  def coaches    
+  def coaches
     if params[:tournament_id].present?
       @registers = Register.joins(:inscription).where("register_type_id = ? and inscriptions.tournament_id = ?", 1, params[:tournament_id])
     end
