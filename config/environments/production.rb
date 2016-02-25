@@ -109,7 +109,9 @@ Rails.application.configure do
   #Amazon WEB S3 Services
   config.paperclip_defaults = {
     :storage => :s3,
-    :region => ENV['AWS_REGION'],
+    # :url => ":s3_domain_url",
+    # :path => '/:class/:attachment/:id_partition/:style/:filename',
+    :s3_region => ENV['AWS_REGION'],
     :s3_credentials => {
       :bucket => ENV['AWS_BUCKET'],
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
